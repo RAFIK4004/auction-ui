@@ -1209,7 +1209,7 @@ function App() {
               <ul className="text-gray-300 space-y-3">
                 <li className="animate-fade-in flex items-center gap-3">
                   <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                  Click "Buy Now" to be redirected to our secure Tebex store
+                  Click "Buy Now\" to be redirected to our secure Tebex store
                 </li>
                 <li className="animate-fade-in flex items-center gap-3" style={{animationDelay: '100ms'}}>
                   <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
