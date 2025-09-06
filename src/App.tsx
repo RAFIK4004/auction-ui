@@ -481,3 +481,11 @@ function App() {
                 <span className="font-medium text-purple-400">{player.tebexCoins}</span>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default App;
