@@ -1,2728 +1,1188 @@
 import React, { useState, useEffect } from 'react';
 import { 
   Car, 
-  Gavel, 
-  ShoppingBag, 
-  Settings, 
-  Monitor, 
-  Smartphone, 
-  Users, 
-  TrendingUp, 
   Clock, 
-  DollarSign,
-  Eye,
-  Heart,
-  Star,
-  Award,
-  Zap,
-  Activity,
-  BarChart3,
-  Calendar,
-  MapPin,
-  Phone,
-  Mail,
-  Globe,
-  Shield,
-  CheckCircle,
-  AlertCircle,
-  XCircle,
-  Wifi,
-  Battery,
-  Signal,
-  Volume2,
-  Bluetooth,
-  Camera,
-  Mic,
-  Speaker,
-  Headphones,
-  Radio,
-  Navigation,
-  Fuel,
-  Gauge,
-  Thermometer,
-  Wind,
-  Sun,
-  Moon,
-  CloudRain,
-  Snowflake,
-  Umbrella,
-  Lightbulb,
-  Power,
-  Plug,
-  WifiOff,
-  BatteryLow,
-  SignalLow,
-  VolumeX,
-  BluetoothOff,
-  CameraOff,
-  MicOff,
-  SpeakerX,
-  HeadphonesOff,
-  RadioOff,
-  NavigationOff,
-  FuelOff,
-  GaugeOff,
-  ThermometerSun,
-  WindOff,
-  SunOff,
-  MoonOff,
-  CloudRainWind,
-  SnowflakeOff,
-  UmbrellaOff,
-  LightbulbOff,
-  PowerOff,
-  PlugOff,
+  DollarSign, 
+  Settings, 
+  Plus, 
+  Edit, 
+  Trash2, 
+  Play, 
   X,
-  ChevronRight,
-  ChevronDown,
-  Plus,
-  Minus,
-  Search,
-  Filter,
-  SortAsc,
-  SortDesc,
-  Grid,
-  List,
-  Maximize,
-  Minimize,
-  RotateCcw,
-  RotateCw,
-  ZoomIn,
-  ZoomOut,
-  Move,
-  Copy,
-  Trash,
-  Edit,
-  Save,
-  Download,
-  Upload,
-  Share,
-  Link,
-  ExternalLink,
-  Home,
-  User,
-  UserPlus,
-  UserMinus,
-  UserCheck,
-  UserX,
-  Lock,
-  Unlock,
-  Key,
-  Fingerprint,
-  CreditCard,
-  Wallet,
-  Receipt,
-  Tag,
-  Tags,
-  Bookmark,
-  BookmarkPlus,
-  BookmarkMinus,
-  BookmarkCheck,
-  BookmarkX,
-  Flag,
-  FlagOff,
-  Bell,
-  BellOff,
-  BellRing,
-  MessageCircle,
-  MessageSquare,
-  Mail as MailIcon,
-  Send,
-  Inbox,
-  Archive,
-  Trash2,
-  FileText,
-  File,
-  Folder,
-  FolderOpen,
-  FolderPlus,
-  FolderMinus,
-  FolderCheck,
-  FolderX,
-  Image,
-  Video,
-  Music,
-  PlayCircle,
-  PauseCircle,
-  StopCircle,
-  SkipBack,
-  SkipForward,
-  Rewind,
-  FastForward,
-  Repeat,
-  RepeatOnce,
-  Shuffle,
-  Volume,
-  Volume1,
-  VolumeOff as VolumeOffIcon,
-  Layers,
-  Layout,
-  Sidebar,
-  PanelLeft,
-  PanelRight,
-  PanelTop,
-  PanelBottom,
-  Columns,
-  Rows,
-  Square,
-  Circle,
-  Triangle,
-  Hexagon,
-  Octagon,
-  Diamond,
-  Pentagon,
-  Star as StarIcon,
-  Heart as HeartIcon,
-  Smile,
-  Frown,
-  Meh,
-  Angry,
-  Laugh,
-  Cry,
-  Kiss,
-  Wink,
-  Surprised,
-  Confused,
-  Sleepy,
-  Dizzy,
-  Sick,
-  Dead,
-  Ghost,
-  Alien,
-  Robot,
-  Monster,
-  Poop,
-  Fire,
-  Snowman,
-  Tree,
-  Flower,
-  Leaf,
-  Seedling,
-  Herb,
-  Shamrock,
-  FourLeafClover,
-  PineTree,
-  DeciduousTree,
-  Palm,
-  Cactus,
-  Tulip,
-  Cherry,
-  Grapes,
-  Watermelon,
-  Tangerine,
-  Lemon,
-  Banana,
-  Pineapple,
-  Apple,
-  GreenApple,
-  Pear,
-  Peach,
-  Cherries,
-  Strawberry,
-  Kiwi,
-  Tomato,
-  Coconut,
-  Avocado,
-  Eggplant,
-  Potato,
-  Carrot,
-  Corn,
-  HotPepper,
-  Cucumber,
-  Broccoli,
-  Mushroom,
-  Peanuts,
-  Chestnut,
-  Bread,
-  Croissant,
-  Baguette,
-  Pretzel,
-  Pancakes,
-  Cheese,
-  MeatOnBone,
-  PoultryLeg,
-  Bacon,
-  Hamburger,
-  Fries,
-  Pizza,
-  HotDog,
-  Taco,
-  Burrito,
-  Sandwich,
-  Stuffed,
-  Egg,
-  Cooking,
-  Pot,
-  Pan,
-  Spoon,
-  Fork,
-  Knife,
-  Plate,
-  Bowl,
-  Cup,
-  Glass,
-  Bottle,
-  Wine,
-  Beer,
-  Cocktail,
-  Tropical,
-  Coffee,
-  Tea,
-  Sake,
-  Champagne,
-  Milk,
-  BabyBottle,
-  Water,
-  Honey,
-  Salt,
-  Icecream,
-  Shaved,
-  Cake,
-  Cupcake,
-  Pie,
-  Chocolate,
-  Candy,
-  Lollipop,
-  Custard,
-  Doughnut,
-  Cookie,
-  Birthday,
-  Party,
-  Balloon,
-  Confetti,
-  Tada,
+  Coins,
+  ShoppingCart,
   Gift,
-  Ribbon,
-  Wrapped,
-  Christmas,
-  Santa,
-  MrsClaus,
-  Elf,
-  Reindeer,
-  Snowflake as SnowflakeIcon,
-  Snowman as SnowmanIcon,
-  ChristmasTree,
-  Wreath,
-  Fireworks,
-  Sparkler,
-  Sparkles,
-  Boom,
-  Collision,
-  Sweat,
-  Droplet,
-  Ocean,
-  Wave,
-  Cyclone,
-  Fog,
-  Tornado,
-  Lightning,
-  Thunder,
-  Sunny,
-  PartlySunny,
-  Cloudy,
-  PartlyCloudy,
-  Overcast,
-  Drizzle,
-  Rain,
-  HeavyRain,
-  Shower,
-  Storm,
-  Snow,
-  Blizzard,
-  Hail,
-  Sleet,
-  Mist,
-  Windy,
-  Dust,
-  Sandstorm,
-  Earthquake,
-  Volcano,
-  Avalanche,
-  Flood,
-  Drought,
-  Desert,
-  Beach,
-  Island,
-  Mountain,
-  Hill,
-  Valley,
-  Canyon,
-  Cave,
-  Forest,
-  Jungle,
-  Swamp,
-  River,
-  Lake,
-  Waterfall,
-  Geyser,
-  HotSprings,
-  Camping,
-  Tent,
-  Hut,
-  House,
-  Home as HomeIcon,
-  Building,
-  Office,
-  Factory,
-  Hospital,
-  School,
-  University,
-  Library,
-  Museum,
-  Theater,
-  Cinema,
-  Stadium,
-  Arena,
-  Gym,
-  Pool,
-  Spa,
-  Hotel,
-  Motel,
-  Resort,
-  Castle,
-  Palace,
-  Fort,
-  Tower,
-  Bridge,
-  Statue,
-  Monument,
-  Fountain,
-  Park,
-  Garden,
-  Zoo,
-  Aquarium,
-  Circus,
-  Carnival,
-  FerrisWheel,
-  RollerCoaster,
-  Carousel,
-  Playground,
-  Sandbox,
-  Slide,
-  Swing,
-  Seesaw,
-  Kite,
-  Balloon as BalloonIcon,
-  Pinwheel,
-  Ribbon as RibbonIcon,
-  Bow,
-  Knot,
-  Thread,
-  Yarn,
-  Fabric,
-  Scissors,
-  Needle,
-  Pin,
-  Safety,
-  Paperclip,
-  Pushpin,
-  Thumbtack,
-  Ruler,
-  Triangular,
-  Compass,
-  Magnifying,
-  Microscope,
-  Telescope,
-  Satellite,
-  Radar,
-  Antenna,
-  Dish,
-  Radio as RadioIcon,
-  Television,
-  Computer,
-  Laptop,
-  Desktop,
-  Keyboard,
-  Mouse,
-  Trackball,
-  Joystick,
-  GameController,
-  Dice,
-  Puzzle,
-  Chess,
-  Checkers,
-  Cards,
-  Mahjong,
-  Domino,
-  Billiards,
-  PingPong,
-  Badminton,
-  Tennis,
-  Volleyball,
-  Basketball,
-  Football,
-  Soccer,
-  Baseball,
-  Softball,
-  Cricket,
-  FieldHockey,
-  IceHockey,
-  Lacrosse,
-  Rugby,
-  Golf,
-  Archery,
-  Darts,
-  YoYo,
-  Kite as KiteIcon,
-  Frisbee,
-  Boomerang,
-  Slingshot,
-  Bow as BowIcon,
-  Arrow,
-  Spear,
-  Sword,
-  Dagger,
-  Shield as ShieldIcon,
-  Helmet,
-  Crown,
-  TopHat,
-  Graduation,
-  Beret,
-  Sombrero,
-  Cowboy,
-  Fedora,
-  Beanie,
-  Turban,
-  Headband,
-  Scarf,
-  Gloves,
-  Mittens,
-  Coat,
-  Jacket,
-  Vest,
-  Shirt,
-  TShirt,
-  Jeans,
-  Pants,
-  Shorts,
-  Skirt,
-  Dress,
-  Bikini,
-  Swimsuit,
-  Underwear,
-  Bra,
-  Socks,
-  Stockings,
-  Shoes,
-  Sneakers,
-  Boots,
-  Sandals,
-  Heels,
-  Flats,
-  Slippers,
-  Bag,
-  Handbag,
-  Purse,
-  Backpack,
-  Briefcase,
-  Suitcase,
-  Luggage,
-  Umbrella as UmbrellaIcon,
-  Parasol,
-  Fan,
-  Lipstick,
-  Ring,
-  Gem,
-  Diamond as DiamondIcon,
-  Pearl,
-  Necklace,
-  Bracelet,
-  Watch,
-  Sunglasses,
-  Glasses,
-  Goggles,
-  Mask,
-  Mustache,
-  Beard,
-  Hair,
-  Bald,
-  Baby,
-  Child,
-  Boy,
-  Girl,
-  Man,
-  Woman,
-  Adult,
-  Elder,
-  Grandpa,
-  Grandma,
-  Family,
-  Couple,
-  Kiss as KissIcon,
-  Love,
-  Wedding,
-  Bouquet,
-  Church,
-  Mosque,
-  Synagogue,
-  Temple,
-  Shrine,
-  Kaaba,
-  Pray,
-  Meditation,
-  Yoga,
-  Massage,
-  Haircut,
-  Barber,
-  Nail,
-  Makeup,
-  Spa as SpaIcon,
-  Sauna,
-  Bath,
-  Shower as ShowerIcon,
-  Toilet,
-  Potty,
-  Diaper,
-  Bottle as BottleIcon,
-  Milk as MilkIcon,
-  Formula,
-  Pacifier,
-  Rattle,
-  Stroller,
-  Crib,
-  Teddy,
-  Doll,
-  Toy,
-  Block,
-  Lego,
-  Puzzle as PuzzleIcon,
-  Game,
-  Dice as DiceIcon,
-  Slot,
-  Lottery,
-  Ticket,
-  Trophy,
-  Medal,
-  Award as AwardIcon,
-  Certificate,
-  Diploma,
-  Ribbon as RibbonIcon2,
-  Rosette,
-  Badge,
-  ID,
-  Passport,
-  Visa,
-  Customs,
-  Baggage,
-  Departure,
-  Arrival,
-  Airplane,
-  Helicopter,
-  Rocket,
-  Satellite as SatelliteIcon,
-  UFO,
-  Train,
-  Metro,
-  Tram,
-  Bus,
-  Trolley,
-  Minibus,
-  Ambulance,
-  FireTruck,
-  Police,
-  Taxi,
-  Car as CarIcon,
-  SUV,
-  Truck,
-  Pickup,
-  Van,
-  RV,
-  Tractor,
-  Bike,
-  Scooter,
-  Motorcycle,
-  ATV,
-  Boat,
-  Ship,
-  Ferry,
-  Yacht,
-  Speedboat,
-  Sailboat,
-  Canoe,
-  Kayak,
-  Raft,
-  Anchor,
-  Wheel,
-  Gear,
-  Nut,
-  Bolt,
-  Screw,
-  Nail as NailIcon,
-  Hammer,
-  Wrench,
-  Screwdriver,
-  Saw,
-  Drill,
-  Axe,
-  Pickaxe,
-  Shovel,
-  Rake,
-  Hoe,
-  Pitchfork,
-  Broom,
-  Mop,
-  Bucket,
-  Soap,
-  Sponge,
-  Brush,
-  Toothbrush,
-  Razor,
-  Lotion,
-  Perfume,
-  Cologne,
-  Deodorant,
-  Shampoo,
-  Conditioner,
-  Towel,
-  Washcloth,
-  Bathrobe,
-  Slippers as SlippersIcon,
-  Flip,
-  Sandals as SandalsIcon,
-  Socks as SocksIcon,
-  Stockings as StockingsIcon,
-  Tights,
-  Pantyhose,
-  Leggings,
-  Jeans as JeansIcon,
-  Pants as PantsIcon,
-  Shorts as ShortsIcon,
-  Skirt as SkirtIcon,
-  Dress as DressIcon,
-  Gown,
-  Robe,
-  Kimono,
-  Sari,
-  Hijab,
-  Turban as TurbanIcon,
-  Hat,
-  Cap,
-  Helmet as HelmetIcon,
-  Crown as CrownIcon,
-  Tiara,
-  Headband as HeadbandIcon,
-  Bow as BowIcon2,
-  Ribbon as RibbonIcon3,
-  Scarf as ScarfIcon,
-  Tie,
-  Bowtie,
-  Suspenders,
-  Belt,
-  Buckle,
-  Button,
-  Zipper,
-  Velcro,
-  Snap,
-  Hook,
   Eye,
-  Loop,
-  Clasp,
-  Pin as PinIcon,
-  Brooch,
-  Cufflinks,
-  Earrings,
-  Necklace as NecklaceIcon,
-  Pendant,
-  Locket,
-  Charm,
-  Bracelet as BraceletIcon,
-  Bangle,
-  Anklet,
-  Ring as RingIcon,
-  Wedding as WeddingIcon,
-  Engagement,
-  Promise,
-  Class,
-  Signet,
-  Pinky,
-  Thumb,
-  Mood,
-  Spinner,
-  Fidget,
-  Stress,
-  Squeeze,
-  Therapy,
-  Exercise,
-  Weights,
-  Dumbbell,
-  Barbell,
-  Kettlebell,
-  Medicine,
-  Yoga as YogaIcon,
-  Mat,
-  Block as BlockIcon,
-  Strap,
-  Bolster,
-  Pillow,
-  Cushion,
-  Blanket,
-  Quilt,
-  Comforter,
-  Sheet,
-  Pillowcase,
-  Mattress,
-  Bed,
-  Bunk,
-  Cot,
-  Futon,
-  Sofa,
-  Couch,
-  Loveseat,
-  Chair,
-  Armchair,
-  Recliner,
-  Rocker,
-  Stool,
-  Bench,
-  Ottoman,
-  Table,
-  Desk,
-  Nightstand,
-  Dresser,
-  Wardrobe,
-  Closet,
-  Shelf,
-  Bookshelf,
-  Cabinet,
-  Drawer,
-  Door,
-  Window,
-  Curtain,
-  Blind,
-  Shade,
-  Shutter,
-  Screen,
-  Frame,
-  Mirror,
-  Picture,
-  Painting,
-  Poster,
-  Print,
-  Canvas,
-  Easel,
-  Palette,
-  Brush as BrushIcon,
-  Paint,
-  Crayon,
-  Marker,
-  Pencil,
-  Pen,
-  Eraser,
-  Sharpener,
-  Ruler as RulerIcon,
-  Protractor,
-  Compass as CompassIcon,
-  Square as SquareIcon,
-  Triangle as TriangleIcon,
-  Circle as CircleIcon,
-  Oval,
-  Rectangle,
-  Rhombus,
-  Parallelogram,
-  Trapezoid,
-  Pentagon as PentagonIcon,
-  Hexagon as HexagonIcon,
-  Heptagon,
-  Octagon as OctagonIcon,
-  Nonagon,
-  Decagon,
-  Dodecagon,
-  Star as StarIcon2,
-  Cross,
-  Plus as PlusIcon,
-  Minus as MinusIcon,
-  Multiply,
-  Divide,
-  Equals,
-  Percent,
-  Infinity,
-  Pi,
-  Sigma,
-  Alpha,
-  Beta,
-  Gamma,
-  Delta,
-  Epsilon,
-  Zeta,
-  Eta,
-  Theta,
-  Iota,
-  Kappa,
-  Lambda,
-  Mu,
-  Nu,
-  Xi,
-  Omicron,
-  Rho,
-  Tau,
-  Upsilon,
-  Phi,
-  Chi,
-  Psi,
-  Omega,
-  Zero,
-  One,
-  Two,
-  Three,
-  Four,
-  Five,
-  Six,
-  Seven,
-  Eight,
-  Nine,
-  Ten,
-  Hundred,
-  Thousand,
-  Million,
-  Billion,
-  Trillion,
-  Quadrillion,
-  Quintillion,
-  Sextillion,
-  Septillion,
-  Octillion,
-  Nonillion,
-  Decillion,
-  Googol,
-  Googolplex,
-  A,
-  B,
-  C,
-  D,
-  E,
-  F,
-  G,
-  H,
-  I,
-  J,
-  K,
-  L,
-  M,
-  N,
-  O,
-  P,
-  Q,
-  R,
-  S,
-  T,
-  U,
-  V,
-  W,
-  X,
-  Y,
-  Z,
-  Exclamation,
-  Question,
-  Period,
-  Comma,
-  Semicolon,
-  Colon,
-  Apostrophe,
-  Quote,
-  Hyphen,
-  Dash,
-  Underscore,
-  Parentheses,
-  Brackets,
-  Braces,
-  Angle,
-  Slash,
-  Backslash,
-  Pipe,
-  Ampersand,
-  At,
-  Hash,
-  Dollar,
-  Euro,
-  Pound,
-  Yen,
-  Won,
-  Rupee,
-  Ruble,
-  Franc,
-  Peso,
-  Real,
-  Rand,
-  Shekel,
-  Dinar,
-  Dirham,
-  Riyal,
-  Taka,
-  Baht,
-  Dong,
-  Kip,
-  Riel,
-  Kyat,
-  Tugrik,
-  Som,
-  Manat,
-  Lari,
-  Dram,
-  Leu,
-  Lev,
-  Kuna,
-  Forint,
-  Koruna,
-  Zloty,
-  Krona,
-  Krone,
-  Markka,
-  Guilder,
-  Escudo,
-  Peseta,
-  Lira,
-  Drachma,
-  Schilling,
-  Florin,
-  Ducat,
-  Thaler,
+  EyeOff,
+  Zap,
+  Timer,
+  Users,
+  ChevronLeft,
+  ChevronRight,
+  Bell,
+  Trophy,
+  Sparkles,
+  Gavel,
   Crown,
-  Sovereign,
-  Guinea,
-  Shilling,
-  Pence,
-  Penny,
-  Farthing,
-  Halfpenny,
-  Groat,
-  Noble,
-  Angel,
-  Rose,
-  Unite,
-  Laurel,
-  Jacobus,
-  Carolus,
-  Spade,
-  Broad,
-  Piece,
-  Doubloon,
-  Pistole,
-  Louis,
-  Napoleon,
-  Frederick,
-  Ducat as DucatIcon,
-  Florin as FlorinIcon,
-  Gulden,
-  Kreuzer,
-  Pfennig,
-  Groschen,
-  Heller,
-  Denier,
-  Solidus,
-  Bezant,
-  Nomisma,
-  Follis,
-  Siliqua,
-  Tremissis,
-  Semissis,
-  Aureus,
-  Denarius,
-  Sestertius,
-  Dupondius,
-  As,
-  Semis,
-  Quadrans,
-  Sextans,
-  Uncia,
-  Semuncia,
-  Sicilicus,
-  Sextula,
-  Dimidia,
-  Scripulum,
-  Obolus,
-  Chalcus,
-  Lepton,
-  Prutah,
-  Gerah,
-  Beka,
-  Shekel as ShekelIcon,
-  Mina,
-  Talent,
-  Stater,
-  Drachma as DrachmaIcon,
-  Obol,
-  Chalkous,
-  Tetradrachm,
-  Didrachm,
-  Hemidrachm,
-  Triobol,
-  Diobol,
-  Hemiobol,
-  Tetartemorion,
-  Hemitartemorion,
-  Octadrachm,
-  Decadrachm,
-  Pentadrachm,
-  Tridrachm,
-  Hexadrachm,
-  Heptadrachm,
-  Enneadrachm,
-  Dodecadrachm,
-  Icosadrachm,
-  Triacontadrachm,
-  Pentacontadrachm,
-  Hectadrachm,
-  Chiliodrachm,
-  Myriodrachm,
-  Decamyriodrachm,
-  Hectomyriodrachm,
-  Chiliomyriodrachm,
-  Myriomyriodrachm
+  Activity
 } from 'lucide-react';
 
 interface Car {
-  id: number;
+  id: string;
+  spawnName: string;
+  label: string;
+  imageUrl: string;
+  startingBid: number;
+  currency: 'bank' | 'tebex';
+}
+
+interface TebexPackage {
+  id: string;
   name: string;
-  brand: string;
-  year: number;
-  price: number;
-  image: string;
-  mileage: string;
-  fuel: string;
-  transmission: string;
-  condition: string;
-  location: string;
-  seller: string;
-  rating: number;
-  bids: number;
-  timeLeft: string;
-  featured: boolean;
-  category: string;
   description: string;
-  features: string[];
-  history: string[];
-  inspection: {
-    engine: string;
-    transmission: string;
-    brakes: string;
-    tires: string;
-    interior: string;
-    exterior: string;
-    electronics: string;
-    overall: string;
-  };
+  price: string;
+  coins: number;
+  url: string;
 }
 
-interface Package {
-  id: number;
-  name: string;
-  price: number;
-  duration: string;
-  features: string[];
-  popular: boolean;
-  color: string;
+interface Player {
+  bankMoney: number;
+  tebexCoins: number;
 }
 
-interface SystemStatus {
-  cpu: number;
-  memory: number;
-  storage: number;
-  network: number;
-  temperature: number;
-  uptime: string;
-  activeUsers: number;
-  totalAuctions: number;
-  activeBids: number;
-  revenue: number;
-  alerts: Array<{
-    id: number;
-    type: 'info' | 'warning' | 'error' | 'success';
-    message: string;
-    timestamp: string;
-  }>;
-  services: Array<{
-    name: string;
-    status: 'online' | 'offline' | 'maintenance';
-    uptime: string;
-    responseTime: number;
-  }>;
-  recentActivity: Array<{
-    id: number;
-    type: string;
-    description: string;
-    timestamp: string;
-    user: string;
-  }>;
+interface Notification {
+  id: string;
+  type: 'bid' | 'winner';
+  message: string;
+  timestamp: number;
 }
 
-const App: React.FC = () => {
-  const [activeView, setActiveView] = useState<'auction' | 'tablet' | 'bidding' | 'shop' | 'preview' | 'status'>('auction');
-  const [activeControlTab, setActiveControlTab] = useState<'overview' | 'auctions' | 'users' | 'analytics'>('overview');
-  const [selectedCar, setSelectedCar] = useState<Car | null>(null);
-  const [showCarModal, setShowCarModal] = useState(false);
-  const [currentTime, setCurrentTime] = useState(new Date());
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [sortBy, setSortBy] = useState('featured');
-  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+type AuctionStatus = 'closed' | 'scheduled' | 'open' | 'running';
 
-  // System status state
-  const [systemStatus, setSystemStatus] = useState<SystemStatus>({
-    cpu: 45,
-    memory: 62,
-    storage: 78,
-    network: 89,
-    temperature: 42,
-    uptime: '15d 7h 23m',
-    activeUsers: 1247,
-    totalAuctions: 89,
-    activeBids: 342,
-    revenue: 2847593,
-    alerts: [
-      { id: 1, type: 'warning', message: 'High memory usage detected on server 2', timestamp: '2 minutes ago' },
-      { id: 2, type: 'success', message: 'Database backup completed successfully', timestamp: '15 minutes ago' },
-      { id: 3, type: 'info', message: 'New user registration: john.doe@email.com', timestamp: '23 minutes ago' },
-      { id: 4, type: 'error', message: 'Payment gateway timeout - investigating', timestamp: '1 hour ago' },
-    ],
-    services: [
-      { name: 'Web Server', status: 'online', uptime: '99.9%', responseTime: 45 },
-      { name: 'Database', status: 'online', uptime: '99.8%', responseTime: 23 },
-      { name: 'Payment Gateway', status: 'maintenance', uptime: '98.5%', responseTime: 156 },
-      { name: 'Email Service', status: 'online', uptime: '99.7%', responseTime: 89 },
-      { name: 'File Storage', status: 'online', uptime: '99.9%', responseTime: 34 },
-      { name: 'CDN', status: 'online', uptime: '99.6%', responseTime: 67 },
-    ],
-    recentActivity: [
-      { id: 1, type: 'bid', description: 'New bid placed on 2023 BMW M3', timestamp: '2 minutes ago', user: 'alex.smith' },
-      { id: 2, type: 'auction', description: 'Auction ended: 2022 Tesla Model S', timestamp: '5 minutes ago', user: 'system' },
-      { id: 3, type: 'user', description: 'New user registered', timestamp: '8 minutes ago', user: 'jane.doe' },
-      { id: 4, type: 'payment', description: 'Payment processed: $45,000', timestamp: '12 minutes ago', user: 'mike.wilson' },
-      { id: 5, type: 'auction', description: 'New auction created: 2024 Porsche 911', timestamp: '18 minutes ago', user: 'sarah.johnson' },
-    ]
+function App() {
+  const [auctionStatus, setAuctionStatus] = useState<AuctionStatus>('closed');
+  const [scheduledTime, setScheduledTime] = useState<number>(0);
+  const [showTablet, setShowTablet] = useState(false);
+  const [activeTab, setActiveTab] = useState('main');
+  const [showBidding, setShowBidding] = useState(false);
+  const [showTebexShop, setShowTebexShop] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false);
+  const [showPreviewBar, setShowPreviewBar] = useState(true);
+  const [currentCar, setCurrentCar] = useState<Car | null>(null);
+  const [currentBid, setCurrentBid] = useState(0);
+  const [topBidder, setTopBidder] = useState('Player123');
+  const [bidAmount, setBidAmount] = useState('');
+  const [bidCurrency, setBidCurrency] = useState<'bank' | 'tebex'>('bank');
+  const [redeemCode, setRedeemCode] = useState('');
+  const [showRedeemInput, setShowRedeemInput] = useState(false);
+  const [showAddCarModal, setShowAddCarModal] = useState(false);
+  const [showEditCarModal, setShowEditCarModal] = useState(false);
+  const [editingCar, setEditingCar] = useState<Car | null>(null);
+  const [packageScrollIndex, setPackageScrollIndex] = useState(0);
+  const [notifications, setNotifications] = useState<Notification[]>([]);
+
+  const [player] = useState<Player>({
+    bankMoney: 125000,
+    tebexCoins: 50
   });
 
-  const cars: Car[] = [
+  const [carQueue, setCarQueue] = useState<Car[]>([
     {
-      id: 1,
-      name: "Model S Plaid",
-      brand: "Tesla",
-      year: 2023,
-      price: 89999,
-      image: "https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=800",
-      mileage: "5,420 miles",
-      fuel: "Electric",
-      transmission: "Automatic",
-      condition: "Excellent",
-      location: "Los Angeles, CA",
-      seller: "Premium Motors",
-      rating: 4.9,
-      bids: 23,
-      timeLeft: "2d 14h 32m",
-      featured: true,
-      category: "luxury",
-      description: "Experience the pinnacle of electric performance with this pristine Tesla Model S Plaid. This vehicle represents the cutting edge of automotive technology.",
-      features: ["Autopilot", "Premium Interior", "Supercharging", "Over-the-air updates"],
-      history: ["Single owner", "Full service history", "No accidents"],
-      inspection: {
-        engine: "Excellent",
-        transmission: "Excellent", 
-        brakes: "Good",
-        tires: "Excellent",
-        interior: "Excellent",
-        exterior: "Excellent",
-        electronics: "Excellent",
-        overall: "Excellent"
-      }
+      id: '1',
+      spawnName: 'adder',
+      label: 'Truffade Adder',
+      imageUrl: 'https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=400',
+      startingBid: 50000,
+      currency: 'bank'
     },
     {
-      id: 2,
-      name: "911 Turbo S",
-      brand: "Porsche",
-      year: 2022,
-      price: 145000,
-      image: "https://images.pexels.com/photos/3764984/pexels-photo-3764984.jpeg?auto=compress&cs=tinysrgb&w=800",
-      mileage: "8,750 miles",
-      fuel: "Gasoline",
-      transmission: "PDK",
-      condition: "Excellent",
-      location: "Miami, FL",
-      seller: "Exotic Auto Gallery",
-      rating: 4.8,
-      bids: 31,
-      timeLeft: "1d 8h 45m",
-      featured: true,
-      category: "sports",
-      description: "The ultimate expression of Porsche engineering. This 911 Turbo S delivers breathtaking performance with everyday usability.",
-      features: ["Sport Chrono Package", "Carbon Fiber Interior", "PASM", "Sport Exhaust"],
-      history: ["Dealer maintained", "Clean Carfax", "Non-smoker"],
-      inspection: {
-        engine: "Excellent",
-        transmission: "Excellent",
-        brakes: "Excellent", 
-        tires: "Good",
-        interior: "Excellent",
-        exterior: "Good",
-        electronics: "Excellent",
-        overall: "Excellent"
-      }
+      id: '2',
+      spawnName: 'zentorno',
+      label: 'Pegassi Zentorno',
+      imageUrl: 'https://images.pexels.com/photos/1719647/pexels-photo-1719647.jpeg?auto=compress&cs=tinysrgb&w=400',
+      startingBid: 100,
+      currency: 'tebex'
+    }
+  ]);
+
+  const [newCar, setNewCar] = useState({
+    spawnName: '',
+    label: '',
+    imageUrl: '',
+    startingBid: '',
+    currency: 'bank' as 'bank' | 'tebex'
+  });
+
+  const tebexPackages: TebexPackage[] = [
+    {
+      id: '1',
+      name: 'Starter Pack',
+      description: '100 Tebex Coins',
+      price: '$4.99',
+      coins: 100,
+      url: 'https://tebex.io/package/1'
     },
     {
-      id: 3,
-      name: "M3 Competition",
-      brand: "BMW",
-      year: 2023,
-      price: 72000,
-      image: "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&w=800",
-      mileage: "12,300 miles",
-      fuel: "Gasoline",
-      transmission: "Automatic",
-      condition: "Very Good",
-      location: "New York, NY",
-      seller: "Manhattan Motors",
-      rating: 4.7,
-      bids: 18,
-      timeLeft: "3d 22h 15m",
-      featured: false,
-      category: "sports",
-      description: "Pure driving excitement in sedan form. The M3 Competition offers track-ready performance with luxury comfort.",
-      features: ["M Performance Package", "Carbon Fiber Trim", "Harman Kardon Audio", "Adaptive M Suspension"],
-      history: ["One owner", "Garage kept", "Regular maintenance"],
-      inspection: {
-        engine: "Excellent",
-        transmission: "Good",
-        brakes: "Good",
-        tires: "Fair",
-        interior: "Very Good",
-        exterior: "Very Good", 
-        electronics: "Excellent",
-        overall: "Very Good"
-      }
+      id: '2',
+      name: 'Premium Pack',
+      description: '250 Tebex Coins + Bonus',
+      price: '$9.99',
+      coins: 250,
+      url: 'https://tebex.io/package/2'
     },
     {
-      id: 4,
-      name: "C63 S AMG",
-      brand: "Mercedes",
-      year: 2021,
-      price: 68500,
-      image: "https://images.pexels.com/photos/3802508/pexels-photo-3802508.jpeg?auto=compress&cs=tinysrgb&w=800",
-      mileage: "18,900 miles",
-      fuel: "Gasoline",
-      transmission: "9G-Tronic",
-      condition: "Very Good",
-      location: "Chicago, IL",
-      seller: "Windy City Autos",
-      rating: 4.6,
-      bids: 14,
-      timeLeft: "5d 11h 28m",
-      featured: false,
-      category: "luxury",
-      description: "Handcrafted by AMG, this C63 S delivers raw power and refined luxury in perfect harmony.",
-      features: ["AMG Performance Package", "Burmester Audio", "AMG Track Pace", "Dynamic Select"],
-      history: ["Certified Pre-Owned", "Extended warranty", "Service records available"],
-      inspection: {
-        engine: "Very Good",
-        transmission: "Very Good",
-        brakes: "Good",
-        tires: "Good",
-        interior: "Very Good",
-        exterior: "Good",
-        electronics: "Very Good", 
-        overall: "Very Good"
-      }
+      id: '3',
+      name: 'Ultimate Pack',
+      description: '500 Tebex Coins + Exclusive Items',
+      price: '$19.99',
+      coins: 500,
+      url: 'https://tebex.io/package/3'
     },
     {
-      id: 5,
-      name: "R8 V10 Plus",
-      brand: "Audi",
-      year: 2020,
-      price: 142000,
-      image: "https://images.pexels.com/photos/3764984/pexels-photo-3764984.jpeg?auto=compress&cs=tinysrgb&w=800",
-      mileage: "9,200 miles",
-      fuel: "Gasoline", 
-      transmission: "S-Tronic",
-      condition: "Excellent",
-      location: "Las Vegas, NV",
-      seller: "Desert Luxury Motors",
-      rating: 4.9,
-      bids: 27,
-      timeLeft: "4d 16h 42m",
-      featured: true,
-      category: "supercar",
-      description: "The R8 V10 Plus represents Audi's flagship supercar, combining everyday usability with track-focused performance.",
-      features: ["Carbon Fiber Package", "Ceramic Brakes", "Bang & Olufsen Audio", "Magnetic Ride"],
-      history: ["Single owner", "Dealer serviced", "Garage kept"],
-      inspection: {
-        engine: "Excellent",
-        transmission: "Excellent",
-        brakes: "Excellent",
-        tires: "Excellent", 
-        interior: "Excellent",
-        exterior: "Excellent",
-        electronics: "Excellent",
-        overall: "Excellent"
-      }
+      id: '4',
+      name: 'VIP Pack',
+      description: '1000 Tebex Coins + VIP Status',
+      price: '$39.99',
+      coins: 1000,
+      url: 'https://tebex.io/package/4'
     },
     {
-      id: 6,
-      name: "Mustang GT500",
-      brand: "Ford",
-      year: 2022,
-      price: 78000,
-      image: "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&w=800",
-      mileage: "6,800 miles",
-      fuel: "Gasoline",
-      transmission: "Dual-Clutch",
-      condition: "Excellent",
-      location: "Dallas, TX",
-      seller: "Lone Star Performance",
-      rating: 4.8,
-      bids: 22,
-      timeLeft: "2d 9h 17m",
-      featured: false,
-      category: "muscle",
-      description: "American muscle at its finest. The GT500 delivers supercar performance with classic muscle car soul.",
-      features: ["Track Package", "Recaro Seats", "Carbon Fiber Wheels", "Launch Control"],
-      history: ["Adult owned", "Track maintained", "Performance modifications"],
-      inspection: {
-        engine: "Excellent",
-        transmission: "Excellent",
-        brakes: "Very Good",
-        tires: "Good",
-        interior: "Excellent",
-        exterior: "Very Good",
-        electronics: "Excellent",
-        overall: "Excellent"
-      }
+      id: '5',
+      name: 'Elite Pack',
+      description: '2500 Tebex Coins + Elite Benefits',
+      price: '$79.99',
+      coins: 2500,
+      url: 'https://tebex.io/package/5'
     }
   ];
 
-  const packages: Package[] = [
-    {
-      id: 1,
-      name: "Basic Listing",
-      price: 29,
-      duration: "7 days",
-      features: ["Standard listing", "5 photos", "Basic description", "Email support"],
-      popular: false,
-      color: "blue"
-    },
-    {
-      id: 2,
-      name: "Premium Listing",
-      price: 79,
-      duration: "14 days",
-      features: ["Featured listing", "15 photos", "Detailed description", "Priority support", "Social media promotion"],
-      popular: true,
-      color: "purple"
-    },
-    {
-      id: 3,
-      name: "Elite Showcase",
-      price: 149,
-      duration: "30 days",
-      features: ["Top placement", "Unlimited photos", "Video showcase", "Dedicated support", "Professional photography", "Marketing campaign"],
-      popular: false,
-      color: "orange"
-    }
-  ];
-
+  // Countdown timer effect
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentTime(new Date());
+    if (auctionStatus === 'scheduled' && scheduledTime > 0) {
+      const timer = setInterval(() => {
+        setScheduledTime(prev => {
+          if (prev <= 1) {
+            setAuctionStatus('open');
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+      return () => clearInterval(timer);
+    }
+  }, [auctionStatus, scheduledTime]);
+
+  // Auto-show sidebar when auction status changes
+  useEffect(() => {
+    if (auctionStatus !== 'closed') {
+      setShowSidebar(true);
+    }
+  }, [auctionStatus]);
+
+  // Keyboard event handlers
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (e.key.toLowerCase() === 'e' && auctionStatus === 'running' && currentCar && !showBidding && !showTebexShop) {
+        setShowBidding(true);
+      }
+      if (e.key.toLowerCase() === 'g' && !showBidding && !showTebexShop) {
+        setShowTebexShop(true);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [auctionStatus, currentCar, showBidding, showTebexShop]);
+
+  // Auto-remove notifications
+  useEffect(() => {
+    notifications.forEach(notification => {
+      const timer = setTimeout(() => {
+        setNotifications(prev => prev.filter(n => n.id !== notification.id));
+      }, 5000);
+      return () => clearTimeout(timer);
+    });
+  }, [notifications]);
+
+  const addNotification = (type: 'bid' | 'winner', message: string) => {
+    const notification: Notification = {
+      id: Date.now().toString(),
+      type,
+      message,
+      timestamp: Date.now()
+    };
+    setNotifications(prev => [...prev, notification]);
+  };
+
+  const formatTime = (seconds: number) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
+  };
+
+  const getCurrencyIcon = (currency: string) => {
+    switch (currency) {
+      case 'bank': return <DollarSign className="w-4 h-4" />;
+      case 'tebex': return <Coins className="w-4 h-4" />;
+      default: return <DollarSign className="w-4 h-4" />;
+    }
+  };
+
+  const getCurrencyColor = (currency: string) => {
+    switch (currency) {
+      case 'bank': return 'text-green-400';
+      case 'tebex': return 'text-purple-400';
+      default: return 'text-green-400';
+    }
+  };
+
+  const handleScheduleAuction = () => {
+    setAuctionStatus('scheduled');
+    setScheduledTime(30); // 30 seconds for demo
+    setShowSidebar(true);
+  };
+
+  const handleOpenAuction = () => {
+    setAuctionStatus('open');
+    setShowSidebar(true);
+  };
+
+  const handleCloseAuction = () => {
+    setAuctionStatus('closed');
+    setCurrentCar(null);
+    // Keep sidebar visible, just change status
+  };
+
+  const handleLaunchCar = (car: Car) => {
+    setCurrentCar(car);
+    setCurrentBid(car.startingBid);
+    setAuctionStatus('running');
+    setShowSidebar(true);
+  };
+
+  const handleAddCar = () => {
+    if (newCar.spawnName && newCar.label && newCar.startingBid) {
+      const car: Car = {
+        id: Date.now().toString(),
+        spawnName: newCar.spawnName,
+        label: newCar.label,
+        imageUrl: newCar.imageUrl || 'https://images.pexels.com/photos/1719647/pexels-photo-1719647.jpeg?auto=compress&cs=tinysrgb&w=400',
+        startingBid: parseInt(newCar.startingBid),
+        currency: newCar.currency
+      };
+      setCarQueue([...carQueue, car]);
+      setNewCar({
+        spawnName: '',
+        label: '',
+        imageUrl: '',
+        startingBid: '',
+        currency: 'bank'
+      });
+      setShowAddCarModal(false);
+    }
+  };
+
+  const handleEditCar = (car: Car) => {
+    setEditingCar(car);
+    setNewCar({
+      spawnName: car.spawnName,
+      label: car.label,
+      imageUrl: car.imageUrl,
+      startingBid: car.startingBid.toString(),
+      currency: car.currency
+    });
+    setShowEditCarModal(true);
+  };
+
+  const handleUpdateCar = () => {
+    if (editingCar && newCar.spawnName && newCar.label && newCar.startingBid) {
+      const updatedCar: Car = {
+        ...editingCar,
+        spawnName: newCar.spawnName,
+        label: newCar.label,
+        imageUrl: newCar.imageUrl || editingCar.imageUrl,
+        startingBid: parseInt(newCar.startingBid),
+        currency: newCar.currency
+      };
+      setCarQueue(carQueue.map(car => car.id === editingCar.id ? updatedCar : car));
+      setNewCar({
+        spawnName: '',
+        label: '',
+        imageUrl: '',
+        startingBid: '',
+        currency: 'bank'
+      });
+      setEditingCar(null);
+      setShowEditCarModal(false);
+    }
+  };
+
+  const handleDeleteCar = (id: string) => {
+    setCarQueue(carQueue.filter(car => car.id !== id));
+  };
+
+  const handlePlaceBid = () => {
+    const bid = parseInt(bidAmount);
+    if (bid > currentBid && currentCar && bidCurrency === currentCar.currency) {
+      setCurrentBid(bid);
+      setTopBidder('You');
+      setBidAmount('');
+      setShowBidding(false);
       
-      // Simulate real-time system status updates
-      setSystemStatus(prev => ({
-        ...prev,
-        cpu: Math.max(20, Math.min(90, prev.cpu + (Math.random() - 0.5) * 10)),
-        memory: Math.max(30, Math.min(95, prev.memory + (Math.random() - 0.5) * 8)),
-        network: Math.max(50, Math.min(100, prev.network + (Math.random() - 0.5) * 5)),
-        temperature: Math.max(35, Math.min(65, prev.temperature + (Math.random() - 0.5) * 3)),
-        activeUsers: Math.max(1000, Math.min(2000, prev.activeUsers + Math.floor((Math.random() - 0.5) * 20))),
-        activeBids: Math.max(200, Math.min(500, prev.activeBids + Math.floor((Math.random() - 0.5) * 10))),
-      }));
-    }, 3000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  const filteredCars = cars.filter(car => {
-    const matchesSearch = car.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         car.brand.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === 'all' || car.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
-
-  const sortedCars = [...filteredCars].sort((a, b) => {
-    switch (sortBy) {
-      case 'price-low':
-        return a.price - b.price;
-      case 'price-high':
-        return b.price - a.price;
-      case 'year':
-        return b.year - a.year;
-      case 'bids':
-        return b.bids - a.bids;
-      default:
-        return b.featured ? 1 : -1;
-    }
-  });
-
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case 'online': return 'text-green-400';
-      case 'offline': return 'text-red-400';
-      case 'maintenance': return 'text-yellow-400';
-      default: return 'text-gray-400';
+      // Add notification
+      const currencySymbol = currentCar.currency === 'bank' ? '$' : '💎';
+      addNotification('bid', `New bid placed: ${currencySymbol}${bid} on ${currentCar.label}`);
     }
   };
 
-  const getStatusIcon = (status: string) => {
-    switch (status) {
-      case 'online': return <CheckCircle className="w-4 h-4" />;
-      case 'offline': return <XCircle className="w-4 h-4" />;
-      case 'maintenance': return <AlertCircle className="w-4 h-4" />;
-      default: return <AlertCircle className="w-4 h-4" />;
+  const scrollPackages = (direction: 'left' | 'right') => {
+    const maxIndex = Math.max(0, tebexPackages.length - 3);
+    if (direction === 'left') {
+      setPackageScrollIndex(Math.max(0, packageScrollIndex - 1));
+    } else {
+      setPackageScrollIndex(Math.min(maxIndex, packageScrollIndex + 1));
     }
   };
 
-  const getAlertIcon = (type: string) => {
-    switch (type) {
-      case 'success': return <CheckCircle className="w-4 h-4 text-green-400" />;
-      case 'warning': return <AlertCircle className="w-4 h-4 text-yellow-400" />;
-      case 'error': return <XCircle className="w-4 h-4 text-red-400" />;
-      default: return <AlertCircle className="w-4 h-4 text-blue-400" />;
-    }
-  };
+  const visiblePackages = tebexPackages.slice(packageScrollIndex, packageScrollIndex + 3);
 
-  const getActivityIcon = (type: string) => {
-    switch (type) {
-      case 'bid': return <Gavel className="w-4 h-4 text-orange-400" />;
-      case 'auction': return <Car className="w-4 h-4 text-blue-400" />;
-      case 'user': return <Users className="w-4 h-4 text-green-400" />;
-      case 'payment': return <DollarSign className="w-4 h-4 text-purple-400" />;
-      default: return <Activity className="w-4 h-4 text-gray-400" />;
+  // Update bid currency when car changes
+  useEffect(() => {
+    if (currentCar) {
+      setBidCurrency(currentCar.currency);
     }
-  };
+  }, [currentCar]);
 
-  const renderAuctionView = () => (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-6">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="glass rounded-2xl p-8 mb-8 auction-glow animate-slide-down">
-          <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center space-x-4">
-              <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl">
-                <Gavel className="w-8 h-8 text-white" />
-              </div>
-              <div>
-                <h1 className="text-3xl font-bold gradient-text">Elite Car Auctions</h1>
-                <p className="text-slate-400">Premium vehicles, exceptional experiences</p>
-              </div>
-            </div>
-            <div className="text-right">
-              <div className="text-2xl font-bold text-white">{currentTime.toLocaleTimeString()}</div>
-              <div className="text-slate-400">{currentTime.toLocaleDateString()}</div>
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900/20 to-purple-900/20 text-white overflow-hidden relative">
+      {/* Enhanced Animated Background */}
+      <div className="fixed inset-0 opacity-20">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 via-purple-500/30 to-orange-500/30 animate-gradient-shift"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-float-delayed"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-orange-500/15 rounded-full blur-2xl animate-pulse-slow"></div>
+      </div>
+
+      {/* Notifications */}
+      <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 space-y-2">
+        {notifications.map((notification) => (
+          <div
+            key={notification.id}
+            className={`px-6 py-3 rounded-xl backdrop-blur-sm border shadow-2xl animate-slide-down notification-glow ${
+              notification.type === 'bid' 
+                ? 'bg-orange-600/90 border-orange-500/50 text-orange-100' 
+                : 'bg-green-600/90 border-green-500/50 text-green-100'
+            }`}
+          >
+            <div className="flex items-center gap-3">
+              {notification.type === 'bid' ? (
+                <Bell className="w-5 h-5 animate-bounce" />
+              ) : (
+                <Trophy className="w-5 h-5 animate-pulse-glow" />
+              )}
+              <span className="font-medium">{notification.message}</span>
             </div>
           </div>
+        ))}
+      </div>
 
-          {/* Search and Filters */}
-          <div className="flex flex-wrap gap-4 items-center">
-            <div className="relative flex-1 min-w-64">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
-              <input
-                type="text"
-                placeholder="Search cars, brands, models..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
-              />
-            </div>
-            <select
-              value={selectedCategory}
-              onChange={(e) => setSelectedCategory(e.target.value)}
-              className="px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-xl text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
-            >
-              <option value="all">All Categories</option>
-              <option value="luxury">Luxury</option>
-              <option value="sports">Sports</option>
-              <option value="supercar">Supercar</option>
-              <option value="muscle">Muscle</option>
-            </select>
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value)}
-              className="px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-xl text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
-            >
-              <option value="featured">Featured First</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
-              <option value="year">Newest First</option>
-              <option value="bids">Most Bids</option>
-            </select>
-            <div className="flex bg-slate-800/50 rounded-xl border border-slate-700 overflow-hidden">
-              <button
-                onClick={() => setViewMode('grid')}
-                className={`p-3 transition-all ${viewMode === 'grid' ? 'bg-blue-500 text-white' : 'text-slate-400 hover:text-white'}`}
-              >
-                <Grid className="w-5 h-5" />
-              </button>
-              <button
-                onClick={() => setViewMode('list')}
-                className={`p-3 transition-all ${viewMode === 'list' ? 'bg-blue-500 text-white' : 'text-slate-400 hover:text-white'}`}
-              >
-                <List className="w-5 h-5" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Cars Grid */}
-        <div className={`grid gap-6 ${viewMode === 'grid' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'}`}>
-          {sortedCars.map((car, index) => (
-            <div
-              key={car.id}
-              className="glass rounded-2xl overflow-hidden card-hover enhanced-car-card animate-slide-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
-              onClick={() => {
-                setSelectedCar(car);
-                setShowCarModal(true);
-              }}
-            >
-              <div className="relative">
-                <img
-                  src={car.image}
-                  alt={car.name}
-                  className="w-full h-48 object-cover"
-                />
-                {car.featured && (
-                  <div className="absolute top-4 left-4 bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold animate-pulse-glow">
-                    <Star className="w-4 h-4 inline mr-1" />
-                    Featured
-                  </div>
-                )}
-                <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm">
-                  <Clock className="w-4 h-4 inline mr-1" />
-                  {car.timeLeft}
-                </div>
-                <div className="absolute bottom-4 left-4 bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm">
-                  <Gavel className="w-4 h-4 inline mr-1" />
-                  {car.bids} bids
-                </div>
-              </div>
-
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-xl font-bold text-white">{car.year} {car.brand} {car.name}</h3>
-                  <div className="flex items-center text-yellow-400">
-                    <Star className="w-4 h-4 fill-current" />
-                    <span className="ml-1 text-sm">{car.rating}</span>
-                  </div>
-                </div>
-
-                <div className="text-2xl font-bold gradient-text mb-4">
-                  ${car.price.toLocaleString()}
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 text-sm text-slate-400 mb-4">
-                  <div className="flex items-center">
-                    <Gauge className="w-4 h-4 mr-2" />
-                    {car.mileage}
-                  </div>
-                  <div className="flex items-center">
-                    <Fuel className="w-4 h-4 mr-2" />
-                    {car.fuel}
-                  </div>
-                  <div className="flex items-center">
-                    <Settings className="w-4 h-4 mr-2" />
-                    {car.transmission}
-                  </div>
-                  <div className="flex items-center">
-                    <MapPin className="w-4 h-4 mr-2" />
-                    {car.location}
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between">
-                  <div className="text-sm text-slate-400">
-                    Seller: {car.seller}
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <button className="p-2 bg-slate-800 hover:bg-slate-700 rounded-lg transition-all">
-                      <Heart className="w-4 h-4 text-slate-400 hover:text-red-400" />
-                    </button>
-                    <button className="p-2 bg-slate-800 hover:bg-slate-700 rounded-lg transition-all">
-                      <Eye className="w-4 h-4 text-slate-400 hover:text-blue-400" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Stats Footer */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-8">
-          {[
-            { label: 'Active Auctions', value: '89', icon: Car, color: 'blue' },
-            { label: 'Total Bids', value: '1,247', icon: Gavel, color: 'orange' },
-            { label: 'Registered Users', value: '15,432', icon: Users, color: 'green' },
-            { label: 'Cars Sold', value: '2,891', icon: TrendingUp, color: 'purple' }
-          ].map((stat, index) => (
-            <div key={index} className="glass rounded-xl p-6 text-center enhanced-status-card animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-              <div className={`inline-flex p-3 rounded-xl bg-${stat.color}-500/20 mb-3`}>
-                <stat.icon className={`w-6 h-6 text-${stat.color}-400`} />
-              </div>
-              <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
-              <div className="text-slate-400 text-sm">{stat.label}</div>
-            </div>
-          ))}
+      {/* Car silhouette background */}
+      <div className="fixed inset-0 opacity-5 pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <Car className="w-96 h-96 text-white animate-pulse-slow" />
         </div>
       </div>
-    </div>
-  );
 
-  const renderTabletView = () => (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-slate-800 to-indigo-900 p-6">
-      <div className="max-w-4xl mx-auto">
-        <div className="glass rounded-3xl p-8 tablet-glow animate-slide-down">
-          <div className="flex items-center justify-between mb-8">
-            <div className="flex items-center space-x-4">
-              <div className="p-4 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-2xl animate-float">
-                <Smartphone className="w-10 h-10 text-white" />
-              </div>
-              <div>
-                <h1 className="text-4xl font-bold gradient-text">Tablet Control Center</h1>
-                <p className="text-slate-400 text-lg">Advanced auction management interface</p>
-              </div>
-            </div>
-            <div className="text-right">
-              <div className="text-3xl font-bold text-white">{currentTime.toLocaleTimeString()}</div>
-              <div className="text-slate-400">{currentTime.toLocaleDateString()}</div>
-            </div>
-          </div>
-
-          {/* Control Tabs */}
-          <div className="flex space-x-2 mb-8 bg-slate-800/30 rounded-2xl p-2">
-            {[
-              { id: 'overview', label: 'Overview', icon: Monitor },
-              { id: 'auctions', label: 'Auctions', icon: Car },
-              { id: 'users', label: 'Users', icon: Users },
-              { id: 'analytics', label: 'Analytics', icon: BarChart3 }
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveControlTab(tab.id as any)}
-                className={`flex-1 flex items-center justify-center space-x-2 py-4 px-6 rounded-xl transition-all enhanced-tab ${
-                  activeControlTab === tab.id
-                    ? 'bg-gradient-to-r from-purple-500 to-indigo-600 text-white shadow-lg'
-                    : 'text-slate-400 hover:text-white hover:bg-slate-700/50'
-                }`}
+      {/* Preview Control Bar */}
+      {showPreviewBar && (
+        <div className={`fixed top-4 left-4 z-50 transition-all duration-500 ${showPreviewBar ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}>
+          <div className="bg-gray-800/95 backdrop-blur-sm rounded-xl border border-gray-600/50 p-3 shadow-2xl preview-glow">
+            <div className="flex items-center gap-2 mb-3">
+              <Eye className="w-4 h-4 text-blue-400" />
+              <span className="text-sm font-medium text-blue-400">Preview Controls</span>
+              <button 
+                onClick={() => setShowPreviewBar(false)}
+                className="ml-2 p-1 hover:bg-gray-700/50 rounded transition-colors"
               >
-                <tab.icon className="w-5 h-5" />
-                <span className="font-medium">{tab.label}</span>
+                <EyeOff className="w-3 h-3" />
               </button>
-            ))}
-          </div>
-
-          {/* Tab Content */}
-          <div className="animate-fade-in">
-            {activeControlTab === 'overview' && (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {[
-                  { title: 'Active Auctions', value: '89', change: '+12%', icon: Car, color: 'blue' },
-                  { title: 'Total Revenue', value: '$2.8M', change: '+23%', icon: DollarSign, color: 'green' },
-                  { title: 'Active Users', value: '1,247', change: '+8%', icon: Users, color: 'purple' },
-                  { title: 'Pending Bids', value: '342', change: '+15%', icon: Gavel, color: 'orange' },
-                  { title: 'Completed Sales', value: '156', change: '+19%', icon: TrendingUp, color: 'emerald' },
-                  { title: 'Average Price', value: '$45K', change: '+5%', icon: Award, color: 'pink' }
-                ].map((metric, index) => (
-                  <div key={index} className="enhanced-status-card rounded-2xl p-6 animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className={`p-3 bg-${metric.color}-500/20 rounded-xl`}>
-                        <metric.icon className={`w-6 h-6 text-${metric.color}-400`} />
-                      </div>
-                      <div className={`text-sm font-medium px-2 py-1 rounded-full ${
-                        metric.change.startsWith('+') ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'
-                      }`}>
-                        {metric.change}
-                      </div>
-                    </div>
-                    <div className="text-2xl font-bold text-white mb-1">{metric.value}</div>
-                    <div className="text-slate-400">{metric.title}</div>
-                  </div>
-                ))}
+            </div>
+            <div className="grid grid-cols-2 gap-2 text-xs">
+              <button 
+                onClick={() => setShowSidebar(!showSidebar)}
+                className={`p-2 rounded-lg transition-all duration-200 ${showSidebar ? 'bg-green-600/20 text-green-400' : 'bg-gray-700/50 text-gray-400'}`}
+              >
+                Sidebar
+              </button>
+              <button 
+                onClick={() => setShowTablet(!showTablet)}
+                className={`p-2 rounded-lg transition-all duration-200 ${showTablet ? 'bg-purple-600/20 text-purple-400' : 'bg-gray-700/50 text-gray-400'}`}
+              >
+                Admin Panel
+              </button>
+              <button 
+                onClick={() => setShowBidding(!showBidding)}
+                className={`p-2 rounded-lg transition-all duration-200 ${showBidding ? 'bg-orange-600/20 text-orange-400' : 'bg-gray-700/50 text-gray-400'}`}
+              >
+                Bidding
+              </button>
+              <button 
+                onClick={() => setShowTebexShop(!showTebexShop)}
+                className={`p-2 rounded-lg transition-all duration-200 ${showTebexShop ? 'bg-purple-600/20 text-purple-400' : 'bg-gray-700/50 text-gray-400'}`}
+              >
+                Coin Shop
+              </button>
+            </div>
+            <div className="mt-3 pt-2 border-t border-gray-700/50">
+              <div className="flex gap-2">
+                <button 
+                  onClick={handleScheduleAuction}
+                  className="flex-1 p-1.5 bg-yellow-600/20 text-yellow-400 rounded text-xs hover:bg-yellow-600/30 transition-colors"
+                >
+                  Schedule
+                </button>
+                <button 
+                  onClick={handleOpenAuction}
+                  className="flex-1 p-1.5 bg-green-600/20 text-green-400 rounded text-xs hover:bg-green-600/30 transition-colors"
+                >
+                  Open
+                </button>
+                <button 
+                  onClick={handleCloseAuction}
+                  className="flex-1 p-1.5 bg-red-600/20 text-red-400 rounded text-xs hover:bg-red-600/30 transition-colors"
+                >
+                  Close
+                </button>
               </div>
-            )}
-
-            {activeControlTab === 'auctions' && (
-              <div className="space-y-4">
-                {cars.slice(0, 4).map((car, index) => (
-                  <div key={car.id} className="enhanced-status-card rounded-2xl p-6 animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                    <div className="flex items-center space-x-4">
-                      <img src={car.image} alt={car.name} className="w-20 h-20 rounded-xl object-cover" />
-                      <div className="flex-1">
-                        <h3 className="text-lg font-bold text-white">{car.year} {car.brand} {car.name}</h3>
-                        <div className="flex items-center space-x-4 text-sm text-slate-400 mt-1">
-                          <span className="flex items-center">
-                            <DollarSign className="w-4 h-4 mr-1" />
-                            ${car.price.toLocaleString()}
-                          </span>
-                          <span className="flex items-center">
-                            <Gavel className="w-4 h-4 mr-1" />
-                            {car.bids} bids
-                          </span>
-                          <span className="flex items-center">
-                            <Clock className="w-4 h-4 mr-1" />
-                            {car.timeLeft}
-                          </span>
-                        </div>
-                      </div>
-                      <div className="flex space-x-2">
-                        <button className="enhanced-control-button p-3 bg-blue-500/20 hover:bg-blue-500/30 rounded-xl transition-all">
-                          <Eye className="w-5 h-5 text-blue-400" />
-                        </button>
-                        <button className="enhanced-control-button p-3 bg-green-500/20 hover:bg-green-500/30 rounded-xl transition-all">
-                          <Edit className="w-5 h-5 text-green-400" />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {activeControlTab === 'users' && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="enhanced-status-card rounded-2xl p-6">
-                  <h3 className="text-xl font-bold text-white mb-4">Recent Registrations</h3>
-                  <div className="space-y-3">
-                    {[
-                      { name: 'Alex Johnson', email: 'alex@email.com', time: '2 min ago' },
-                      { name: 'Sarah Wilson', email: 'sarah@email.com', time: '15 min ago' },
-                      { name: 'Mike Davis', email: 'mike@email.com', time: '1 hour ago' },
-                      { name: 'Emma Brown', email: 'emma@email.com', time: '2 hours ago' }
-                    ].map((user, index) => (
-                      <div key={index} className="flex items-center justify-between p-3 bg-slate-800/30 rounded-xl">
-                        <div>
-                          <div className="font-medium text-white">{user.name}</div>
-                          <div className="text-sm text-slate-400">{user.email}</div>
-                        </div>
-                        <div className="text-sm text-slate-400">{user.time}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="enhanced-status-card rounded-2xl p-6">
-                  <h3 className="text-xl font-bold text-white mb-4">Top Bidders</h3>
-                  <div className="space-y-3">
-                    {[
-                      { name: 'John Smith', bids: 23, amount: '$145K' },
-                      { name: 'Lisa Chen', bids: 18, amount: '$98K' },
-                      { name: 'David Miller', bids: 15, amount: '$87K' },
-                      { name: 'Anna Garcia', bids: 12, amount: '$76K' }
-                    ].map((bidder, index) => (
-                      <div key={index} className="flex items-center justify-between p-3 bg-slate-800/30 rounded-xl">
-                        <div>
-                          <div className="font-medium text-white">{bidder.name}</div>
-                          <div className="text-sm text-slate-400">{bidder.bids} bids</div>
-                        </div>
-                        <div className="text-lg font-bold gradient-text">{bidder.amount}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {activeControlTab === 'analytics' && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="enhanced-status-card rounded-2xl p-6">
-                  <h3 className="text-xl font-bold text-white mb-4">Revenue Trends</h3>
-                  <div className="h-48 flex items-end justify-between space-x-2">
-                    {[65, 78, 82, 95, 88, 92, 100].map((height, index) => (
-                      <div key={index} className="flex-1 bg-gradient-to-t from-purple-500 to-indigo-600 rounded-t-lg animate-expand" style={{ height: `${height}%`, animationDelay: `${index * 0.1}s` }} />
-                    ))}
-                  </div>
-                  <div className="flex justify-between text-sm text-slate-400 mt-2">
-                    <span>Mon</span>
-                    <span>Tue</span>
-                    <span>Wed</span>
-                    <span>Thu</span>
-                    <span>Fri</span>
-                    <span>Sat</span>
-                    <span>Sun</span>
-                  </div>
-                </div>
-
-                <div className="enhanced-status-card rounded-2xl p-6">
-                  <h3 className="text-xl font-bold text-white mb-4">Category Performance</h3>
-                  <div className="space-y-4">
-                    {[
-                      { category: 'Luxury', percentage: 85, color: 'purple' },
-                      { category: 'Sports', percentage: 72, color: 'blue' },
-                      { category: 'Supercar', percentage: 68, color: 'orange' },
-                      { category: 'Muscle', percentage: 45, color: 'green' }
-                    ].map((item, index) => (
-                      <div key={index}>
-                        <div className="flex justify-between text-sm mb-2">
-                          <span className="text-white">{item.category}</span>
-                          <span className="text-slate-400">{item.percentage}%</span>
-                        </div>
-                        <div className="w-full bg-slate-700 rounded-full h-2">
-                          <div 
-                            className={`bg-gradient-to-r from-${item.color}-500 to-${item.color}-600 h-2 rounded-full animate-expand`}
-                            style={{ width: `${item.percentage}%`, animationDelay: `${index * 0.2}s` }}
-                          />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  );
+      )}
 
-  const renderBiddingView = () => (
-    <div className="min-h-screen bg-gradient-to-br from-orange-900 via-slate-800 to-red-900 p-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="glass rounded-3xl p-8 bidding-glow animate-slide-down">
-          <div className="flex items-center justify-between mb-8">
-            <div className="flex items-center space-x-4">
-              <div className="p-4 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl animate-bounce-subtle">
-                <Gavel className="w-10 h-10 text-white" />
+      {/* Show Preview Bar Toggle (when hidden) */}
+      {!showPreviewBar && (
+        <button 
+          onClick={() => setShowPreviewBar(true)}
+          className="fixed top-4 left-4 z-50 p-2 bg-blue-600/80 hover:bg-blue-500 rounded-lg shadow-lg transition-all duration-200 hover:scale-110"
+        >
+          <Eye className="w-4 h-4" />
+        </button>
+      )}
+
+      {/* Auction Status Sidebar - Right middle */}
+      <div className={`fixed top-1/2 right-4 transform -translate-y-1/2 z-40 transition-all duration-700 ${
+        showSidebar ? 'translate-x-0 opacity-100 scale-100' : 'translate-x-full opacity-0 scale-95'
+      }`}>
+        <div className="bg-gradient-to-br from-gray-800/95 via-gray-800/90 to-gray-900/95 backdrop-blur-sm rounded-2xl border border-blue-500/30 p-6 min-w-[320px] shadow-2xl auction-glow animate-slide-in-right enhanced-card">
+          {/* Enhanced background pattern */}
+          <div className="absolute inset-0 opacity-10 pointer-events-none overflow-hidden rounded-2xl">
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-500/30 rounded-full blur-xl animate-pulse-glow"></div>
+            <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-purple-500/30 rounded-full blur-xl animate-float"></div>
+            <Car className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 text-blue-400/20" />
+          </div>
+          
+          {/* Player Info */}
+          <div className="mb-6 pb-4 border-b border-gray-700/50 relative z-10">
+            <div className="flex items-center justify-between text-sm animate-fade-in mb-3">
+              <div className="flex items-center gap-2 bg-green-500/10 px-3 py-2 rounded-lg">
+                <DollarSign className="w-4 h-4 text-green-400" />
+                <span className="font-medium text-green-400">${player.bankMoney.toLocaleString()}</span>
               </div>
-              <div>
-                <h1 className="text-4xl font-bold gradient-text">Live Bidding Arena</h1>
-                <p className="text-slate-400 text-lg">Real-time auction excitement</p>
+              <div className="flex items-center gap-2 bg-purple-500/10 px-3 py-2 rounded-lg">
+                <Coins className="w-4 h-4 text-purple-400" />
+                <span className="font-medium text-purple-400">{player.tebexCoins}</span>
               </div>
-            </div>
-            <div className="text-right">
-              <div className="text-3xl font-bold text-white animate-countdown">{currentTime.toLocaleTimeString()}</div>
-              <div className="text-slate-400">{currentTime.toLocaleDateString()}</div>
             </div>
           </div>
 
-          {/* Featured Auction */}
-          <div className="enhanced-status-card rounded-2xl p-8 mb-8 animate-slide-up">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-white">Featured Auction</h2>
-              <div className="flex items-center space-x-4">
-                <div className="bg-red-500/20 text-red-400 px-4 py-2 rounded-full text-sm font-medium animate-pulse-glow">
-                  <Clock className="w-4 h-4 inline mr-2" />
-                  Ending Soon: 2h 15m
-                </div>
-                <div className="bg-green-500/20 text-green-400 px-4 py-2 rounded-full text-sm font-medium">
-                  <Activity className="w-4 h-4 inline mr-2" />
-                  Live: 47 bidders
-                </div>
+          {/* Status Display */}
+          <div className="mb-6 relative z-10">
+            <div className="text-center">
+              <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium ${
+                auctionStatus === 'closed' ? 'bg-red-500/20 text-red-400' :
+                auctionStatus === 'scheduled' ? 'bg-yellow-500/20 text-yellow-400' :
+                auctionStatus === 'open' ? 'bg-green-500/20 text-green-400' :
+                'bg-blue-500/20 text-blue-400'
+              }`}>
+                {auctionStatus === 'closed' && <X className="w-4 h-4" />}
+                {auctionStatus === 'scheduled' && <Clock className="w-4 h-4 animate-pulse" />}
+                {auctionStatus === 'open' && <Play className="w-4 h-4" />}
+                {auctionStatus === 'running' && <Zap className="w-4 h-4 animate-pulse" />}
+                {auctionStatus.charAt(0).toUpperCase() + auctionStatus.slice(1)}
               </div>
+              
+              {auctionStatus === 'scheduled' && (
+                <div className="mt-2 text-2xl font-bold text-yellow-400 animate-countdown">
+                  {formatTime(scheduledTime)}
+                </div>
+              )}
             </div>
+          </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div>
+          {/* Current Car Info */}
+          {currentCar && (
+            <div className="mb-6 relative z-10">
+              <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl p-4 border border-blue-500/20">
                 <img 
-                  src="https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Featured Car"
-                  className="w-full h-64 object-cover rounded-xl"
+                  src={currentCar.imageUrl} 
+                  alt={currentCar.label}
+                  className="w-full h-32 object-cover rounded-lg mb-3"
                 />
-                <div className="mt-4">
-                  <h3 className="text-xl font-bold text-white mb-2">2023 Tesla Model S Plaid</h3>
-                  <div className="grid grid-cols-2 gap-4 text-sm text-slate-400">
-                    <div className="flex items-center">
-                      <Gauge className="w-4 h-4 mr-2" />
-                      5,420 miles
-                    </div>
-                    <div className="flex items-center">
-                      <Zap className="w-4 h-4 mr-2" />
-                      Electric
-                    </div>
-                    <div className="flex items-center">
-                      <Settings className="w-4 h-4 mr-2" />
-                      Automatic
-                    </div>
-                    <div className="flex items-center">
-                      <MapPin className="w-4 h-4 mr-2" />
-                      Los Angeles, CA
-                    </div>
+                <h3 className="font-bold text-lg mb-2">{currentCar.label}</h3>
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-gray-400">Current Bid:</span>
+                  <div className="flex items-center gap-1">
+                    {getCurrencyIcon(currentCar.currency)}
+                    <span className={`font-bold ${getCurrencyColor(currentCar.currency)}`}>
+                      {currentCar.currency === 'bank' ? `$${currentBid.toLocaleString()}` : `${currentBid}`}
+                    </span>
                   </div>
                 </div>
-              </div>
-
-              <div>
-                <div className="text-center mb-6">
-                  <div className="text-4xl font-bold gradient-text mb-2">$89,999</div>
-                  <div className="text-slate-400">Current Highest Bid</div>
-                </div>
-
-                <div className="space-y-4 mb-6">
-                  <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-xl">
-                    <span className="text-white">Starting Bid</span>
-                    <span className="text-slate-400">$75,000</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-xl">
-                    <span className="text-white">Reserve Price</span>
-                    <span className="text-green-400">Met</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-xl">
-                    <span className="text-white">Total Bids</span>
-                    <span className="text-orange-400">23</span>
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  <input
-                    type="number"
-                    placeholder="Enter your bid..."
-                    className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-slate-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition-all"
-                  />
-                  <button className="w-full enhanced-button bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-4 px-6 rounded-xl transition-all transform hover:scale-105">
-                    Place Bid
-                  </button>
+                <div className="flex items-center justify-between text-sm mt-1">
+                  <span className="text-gray-400">Top Bidder:</span>
+                  <span className="font-medium text-blue-400">{topBidder}</span>
                 </div>
               </div>
             </div>
-          </div>
+          )}
 
-          {/* Recent Bids */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="enhanced-status-card rounded-2xl p-6">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center">
-                <Activity className="w-5 h-5 mr-2" />
-                Recent Bids
-              </h3>
-              <div className="space-y-3 max-h-64 overflow-y-auto custom-scrollbar">
-                {[
-                  { bidder: 'Alex M.', amount: '$89,999', time: '2 seconds ago', status: 'winning' },
-                  { bidder: 'Sarah K.', amount: '$89,500', time: '1 minute ago', status: 'outbid' },
-                  { bidder: 'Mike R.', amount: '$89,000', time: '3 minutes ago', status: 'outbid' },
-                  { bidder: 'Emma L.', amount: '$88,500', time: '5 minutes ago', status: 'outbid' },
-                  { bidder: 'John D.', amount: '$88,000', time: '8 minutes ago', status: 'outbid' },
-                  { bidder: 'Lisa C.', amount: '$87,500', time: '12 minutes ago', status: 'outbid' }
-                ].map((bid, index) => (
-                  <div key={index} className={`flex items-center justify-between p-3 rounded-xl animate-slide-in-right ${
-                    bid.status === 'winning' ? 'bg-green-500/20 border border-green-500/30' : 'bg-slate-800/30'
-                  }`} style={{ animationDelay: `${index * 0.1}s` }}>
-                    <div>
-                      <div className="font-medium text-white">{bid.bidder}</div>
-                      <div className="text-sm text-slate-400">{bid.time}</div>
-                    </div>
-                    <div className={`text-lg font-bold ${bid.status === 'winning' ? 'text-green-400' : 'text-slate-300'}`}>
-                      {bid.amount}
-                    </div>
-                  </div>
-                ))}
+          {/* Action Buttons */}
+          <div className="space-y-2 relative z-10">
+            {auctionStatus === 'running' && currentCar && (
+              <button 
+                onClick={() => setShowBidding(true)}
+                className="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 px-4 py-3 rounded-xl font-medium transition-all duration-200 transform hover:scale-105 shadow-lg"
+              >
+                <div className="flex items-center justify-center gap-2">
+                  <Gavel className="w-5 h-5" />
+                  Place Bid (E)
+                </div>
+              </button>
+            )}
+            
+            <button 
+              onClick={() => setShowTebexShop(true)}
+              className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 px-4 py-3 rounded-xl font-medium transition-all duration-200 transform hover:scale-105 shadow-lg"
+            >
+              <div className="flex items-center justify-center gap-2">
+                <ShoppingCart className="w-5 h-5" />
+                Coin Shop (G)
               </div>
-            </div>
-
-            <div className="enhanced-status-card rounded-2xl p-6">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center">
-                <Users className="w-5 h-5 mr-2" />
-                Active Bidders
-              </h3>
-              <div className="space-y-3">
-                {[
-                  { name: 'Alex Martinez', bids: 8, avatar: '🏆' },
-                  { name: 'Sarah Kim', bids: 6, avatar: '🥈' },
-                  { name: 'Mike Rodriguez', bids: 5, avatar: '🥉' },
-                  { name: 'Emma Liu', bids: 4, avatar: '⭐' },
-                  { name: 'John Davis', bids: 3, avatar: '🎯' }
-                ].map((bidder, index) => (
-                  <div key={index} className="flex items-center justify-between p-3 bg-slate-800/30 rounded-xl animate-slide-in-left" style={{ animationDelay: `${index * 0.1}s` }}>
-                    <div className="flex items-center space-x-3">
-                      <div className="text-2xl">{bidder.avatar}</div>
-                      <div>
-                        <div className="font-medium text-white">{bidder.name}</div>
-                        <div className="text-sm text-slate-400">{bidder.bids} bids placed</div>
-                      </div>
-                    </div>
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            </button>
           </div>
         </div>
       </div>
-    </div>
-  );
 
-  const renderShopView = () => (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-slate-800 to-orange-900 p-6">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="glass rounded-2xl p-8 mb-8 shop-glow animate-slide-down">
-          <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center space-x-4">
-              <div className="p-3 bg-gradient-to-r from-purple-500 to-orange-600 rounded-xl animate-float">
-                <ShoppingBag className="w-8 h-8 text-white" />
-              </div>
-              <div>
-                <h1 className="text-3xl font-bold gradient-text">Auction Packages</h1>
-                <p className="text-slate-400">Choose the perfect listing package for your vehicle</p>
-              </div>
+      {/* Admin Control Panel */}
+      {showTablet && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center animate-fade-in">
+          <div className="bg-gradient-to-br from-gray-800/95 via-gray-900/95 to-black/95 backdrop-blur-xl rounded-3xl border border-purple-500/30 w-full max-w-4xl h-[80vh] shadow-2xl tablet-glow animate-slide-in-up modal-glow">
+            {/* Enhanced background pattern */}
+            <div className="absolute inset-0 opacity-5 pointer-events-none overflow-hidden rounded-3xl">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/30 rounded-full blur-3xl animate-float"></div>
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-orange-500/30 rounded-full blur-2xl animate-float-delayed"></div>
+              <Settings className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 text-purple-400/10" />
             </div>
-            <div className="text-right">
-              <div className="text-2xl font-bold text-white">{currentTime.toLocaleTimeString()}</div>
-              <div className="text-slate-400">{currentTime.toLocaleDateString()}</div>
+
+            {/* Header */}
+            <div className="flex items-center justify-between p-6 border-b border-gray-700/50 relative z-10">
+              <div className="flex items-center gap-3">
+                <div className="p-2 bg-purple-500/20 rounded-xl">
+                  <Settings className="w-6 h-6 text-purple-400" />
+                </div>
+                <div>
+                  <h2 className="text-2xl font-bold gradient-text">Admin Control Panel</h2>
+                  <p className="text-gray-400 text-sm">Manage auction system</p>
+                </div>
+              </div>
+              <button 
+                onClick={() => setShowTablet(false)}
+                className="p-2 hover:bg-gray-700/50 rounded-xl transition-colors"
+              >
+                <X className="w-6 h-6" />
+              </button>
             </div>
-          </div>
 
-          <div className="text-center mb-8">
-            <h2 className="text-xl text-slate-300 mb-2">Maximize your vehicle's exposure with our premium listing packages</h2>
-            <p className="text-slate-400">Professional photography, marketing, and dedicated support included</p>
-          </div>
-        </div>
+            {/* Enhanced Navigation */}
+            <div className="flex border-b border-gray-700/50 relative z-10">
+              {[
+                { id: 'main', label: 'Status', icon: Activity },
+                { id: 'queue', label: 'Car Queue', icon: Car },
+                { id: 'settings', label: 'Settings', icon: Settings }
+              ].map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`flex-1 px-6 py-4 text-sm font-medium transition-all duration-200 relative enhanced-tab ${
+                    activeTab === tab.id 
+                      ? 'text-purple-400 bg-purple-500/10' 
+                      : 'text-gray-400 hover:text-white hover:bg-gray-700/30'
+                  }`}
+                >
+                  <div className="flex items-center justify-center gap-2">
+                    <tab.icon className="w-4 h-4" />
+                    {tab.label}
+                  </div>
+                  {activeTab === tab.id && (
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 animate-expand"></div>
+                  )}
+                </button>
+              ))}
+            </div>
 
-        {/* Packages Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {packages.map((pkg, index) => (
-            <div
-              key={pkg.id}
-              className={`glass rounded-2xl p-8 card-hover enhanced-package-card animate-slide-up ${
-                pkg.popular ? 'ring-2 ring-purple-500/50' : ''
-              }`}
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              {pkg.popular && (
-                <div className="bg-gradient-to-r from-purple-500 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4 text-center animate-pulse-glow">
-                  <Star className="w-4 h-4 inline mr-1" />
-                  Most Popular
+            {/* Content */}
+            <div className="p-6 h-full overflow-y-auto custom-scrollbar relative z-10">
+              {activeTab === 'main' && (
+                <div className="space-y-6 animate-fade-in">
+                  {/* Enhanced Status Cards */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="bg-gradient-to-br from-blue-500/10 via-blue-600/5 to-transparent p-6 rounded-2xl border border-blue-500/20 enhanced-status-card">
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="p-3 bg-blue-500/20 rounded-xl">
+                          <Activity className="w-6 h-6 text-blue-400" />
+                        </div>
+                        <div>
+                          <h3 className="font-bold text-lg text-blue-400">Status</h3>
+                          <p className="text-sm text-gray-400">Current auction state</p>
+                        </div>
+                      </div>
+                      <div className={`text-2xl font-bold mb-2 ${
+                        auctionStatus === 'closed' ? 'text-red-400' :
+                        auctionStatus === 'scheduled' ? 'text-yellow-400' :
+                        auctionStatus === 'open' ? 'text-green-400' :
+                        'text-blue-400'
+                      }`}>
+                        {auctionStatus.charAt(0).toUpperCase() + auctionStatus.slice(1)}
+                      </div>
+                      {auctionStatus === 'scheduled' && (
+                        <div className="text-lg font-mono text-yellow-400">
+                          {formatTime(scheduledTime)}
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="bg-gradient-to-br from-green-500/10 via-green-600/5 to-transparent p-6 rounded-2xl border border-green-500/20 enhanced-status-card">
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="p-3 bg-green-500/20 rounded-xl">
+                          <Car className="w-6 h-6 text-green-400" />
+                        </div>
+                        <div>
+                          <h3 className="font-bold text-lg text-green-400">Queue</h3>
+                          <p className="text-sm text-gray-400">Cars in queue</p>
+                        </div>
+                      </div>
+                      <div className="text-2xl font-bold text-green-400 mb-2">
+                        {carQueue.length}
+                      </div>
+                      <div className="text-sm text-gray-400">
+                        {carQueue.length === 0 ? 'No cars queued' : 'Cars ready'}
+                      </div>
+                    </div>
+
+                    <div className="bg-gradient-to-br from-purple-500/10 via-purple-600/5 to-transparent p-6 rounded-2xl border border-purple-500/20 enhanced-status-card">
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="p-3 bg-purple-500/20 rounded-xl">
+                          <Users className="w-6 h-6 text-purple-400" />
+                        </div>
+                        <div>
+                          <h3 className="font-bold text-lg text-purple-400">Players</h3>
+                          <p className="text-sm text-gray-400">Active bidders</p>
+                        </div>
+                      </div>
+                      <div className="text-2xl font-bold text-purple-400 mb-2">
+                        12
+                      </div>
+                      <div className="text-sm text-gray-400">
+                        Online now
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Enhanced Control Buttons */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <button 
+                      onClick={handleScheduleAuction}
+                      disabled={auctionStatus !== 'closed'}
+                      className="bg-gradient-to-r from-yellow-600 to-orange-600 hover:from-yellow-500 hover:to-orange-500 disabled:from-gray-600 disabled:to-gray-700 disabled:cursor-not-allowed px-6 py-4 rounded-xl font-medium transition-all duration-200 transform hover:scale-105 shadow-lg enhanced-control-button"
+                    >
+                      <div className="flex items-center justify-center gap-2">
+                        <Clock className="w-5 h-5" />
+                        Schedule Auction
+                      </div>
+                    </button>
+                    
+                    <button 
+                      onClick={handleOpenAuction}
+                      disabled={auctionStatus === 'running'}
+                      className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 disabled:from-gray-600 disabled:to-gray-700 disabled:cursor-not-allowed px-6 py-4 rounded-xl font-medium transition-all duration-200 transform hover:scale-105 shadow-lg enhanced-control-button"
+                    >
+                      <div className="flex items-center justify-center gap-2">
+                        <Play className="w-5 h-5" />
+                        Open Auction
+                      </div>
+                    </button>
+                    
+                    <button 
+                      onClick={handleCloseAuction}
+                      disabled={auctionStatus === 'closed'}
+                      className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-500 hover:to-pink-500 disabled:from-gray-600 disabled:to-gray-700 disabled:cursor-not-allowed px-6 py-4 rounded-xl font-medium transition-all duration-200 transform hover:scale-105 shadow-lg enhanced-control-button"
+                    >
+                      <div className="flex items-center justify-center gap-2">
+                        <X className="w-5 h-5" />
+                        Close Auction
+                      </div>
+                    </button>
+                  </div>
                 </div>
               )}
 
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
-                <div className="text-4xl font-bold gradient-text mb-2">${pkg.price}</div>
-                <div className="text-slate-400">{pkg.duration}</div>
-              </div>
-
-              <div className="space-y-3 mb-8">
-                {pkg.features.map((feature, featureIndex) => (
-                  <div key={featureIndex} className="flex items-center text-slate-300">
-                    <CheckCircle className={`w-5 h-5 mr-3 text-${pkg.color}-400`} />
-                    <span>{feature}</span>
+              {activeTab === 'queue' && (
+                <div className="space-y-6 animate-fade-in">
+                  {/* Add Car Button */}
+                  <div className="flex justify-between items-center">
+                    <h3 className="text-xl font-bold">Car Queue Management</h3>
+                    <button 
+                      onClick={() => setShowAddCarModal(true)}
+                      className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 px-4 py-2 rounded-xl font-medium transition-all duration-200 transform hover:scale-105 shadow-lg enhanced-button"
+                    >
+                      <div className="flex items-center gap-2">
+                        <Plus className="w-4 h-4" />
+                        Add Car
+                      </div>
+                    </button>
                   </div>
-                ))}
-              </div>
 
-              <button className={`w-full enhanced-button bg-gradient-to-r from-${pkg.color}-500 to-${pkg.color}-600 hover:from-${pkg.color}-600 hover:to-${pkg.color}-700 text-white font-bold py-4 px-6 rounded-xl transition-all transform hover:scale-105`}>
-                Choose Package
-              </button>
-            </div>
-          ))}
-        </div>
-
-        {/* Features Comparison */}
-        <div className="glass rounded-2xl p-8 shop-glow animate-slide-up">
-          <h2 className="text-2xl font-bold text-white mb-6 text-center">Package Comparison</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b border-slate-700">
-                  <th className="text-left py-4 px-6 text-slate-400">Features</th>
-                  <th className="text-center py-4 px-6 text-white">Basic</th>
-                  <th className="text-center py-4 px-6 text-white">Premium</th>
-                  <th className="text-center py-4 px-6 text-white">Elite</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { feature: 'Listing Duration', basic: '7 days', premium: '14 days', elite: '30 days' },
-                  { feature: 'Photo Uploads', basic: '5 photos', premium: '15 photos', elite: 'Unlimited' },
-                  { feature: 'Video Showcase', basic: '❌', premium: '❌', elite: '✅' },
-                  { feature: 'Featured Placement', basic: '❌', premium: '✅', elite: '✅' },
-                  { feature: 'Social Media Promotion', basic: '❌', premium: '✅', elite: '✅' },
-                  { feature: 'Professional Photography', basic: '❌', premium: '❌', elite: '✅' },
-                  { feature: 'Dedicated Support', basic: '❌', premium: '❌', elite: '✅' },
-                  { feature: 'Marketing Campaign', basic: '❌', premium: '❌', elite: '✅' }
-                ].map((row, index) => (
-                  <tr key={index} className="border-b border-slate-800/50 hover:bg-slate-800/20 transition-all">
-                    <td className="py-4 px-6 text-slate-300 font-medium">{row.feature}</td>
-                    <td className="py-4 px-6 text-center text-slate-400">{row.basic}</td>
-                    <td className="py-4 px-6 text-center text-slate-400">{row.premium}</td>
-                    <td className="py-4 px-6 text-center text-slate-400">{row.elite}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        {/* Success Stories */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-          <div className="glass rounded-2xl p-6 animate-slide-in-left">
-            <h3 className="text-xl font-bold text-white mb-4">Success Stories</h3>
-            <div className="space-y-4">
-              {[
-                { name: 'John Smith', car: '2022 Porsche 911', package: 'Elite', result: 'Sold 15% above reserve' },
-                { name: 'Sarah Johnson', car: '2021 Tesla Model S', package: 'Premium', result: 'Sold in 3 days' },
-                { name: 'Mike Wilson', car: '2020 BMW M3', package: 'Elite', result: '47 bids received' }
-              ].map((story, index) => (
-                <div key={index} className="p-4 bg-slate-800/30 rounded-xl">
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="font-medium text-white">{story.name}</div>
-                    <div className="text-sm text-purple-400">{story.package}</div>
+                  {/* Car Queue List */}
+                  <div className="space-y-4">
+                    {carQueue.length === 0 ? (
+                      <div className="text-center py-12 text-gray-400">
+                        <Car className="w-16 h-16 mx-auto mb-4 opacity-50" />
+                        <p className="text-lg font-medium mb-2">No cars in queue</p>
+                        <p className="text-sm">Add some cars to get started</p>
+                      </div>
+                    ) : (
+                      carQueue.map((car) => (
+                        <div key={car.id} className="bg-gradient-to-r from-gray-800/50 to-gray-700/30 rounded-xl p-4 border border-gray-600/30 enhanced-car-card">
+                          <div className="flex items-center gap-4">
+                            <img 
+                              src={car.imageUrl} 
+                              alt={car.label}
+                              className="w-20 h-20 object-cover rounded-lg"
+                            />
+                            <div className="flex-1">
+                              <h4 className="font-bold text-lg">{car.label}</h4>
+                              <p className="text-gray-400 text-sm">Spawn: {car.spawnName}</p>
+                              <div className="flex items-center gap-2 mt-2">
+                                {getCurrencyIcon(car.currency)}
+                                <span className={`font-medium ${getCurrencyColor(car.currency)}`}>
+                                  {car.currency === 'bank' ? `$${car.startingBid.toLocaleString()}` : `${car.startingBid}`}
+                                </span>
+                              </div>
+                            </div>
+                            <div className="flex gap-2">
+                              <button 
+                                onClick={() => handleLaunchCar(car)}
+                                disabled={auctionStatus !== 'open'}
+                                className="bg-green-600 hover:bg-green-500 disabled:bg-gray-600 disabled:cursor-not-allowed p-2 rounded-lg transition-colors"
+                              >
+                                <Play className="w-4 h-4" />
+                              </button>
+                              <button 
+                                onClick={() => handleEditCar(car)}
+                                className="bg-blue-600 hover:bg-blue-500 p-2 rounded-lg transition-colors"
+                              >
+                                <Edit className="w-4 h-4" />
+                              </button>
+                              <button 
+                                onClick={() => handleDeleteCar(car.id)}
+                                className="bg-red-600 hover:bg-red-500 p-2 rounded-lg transition-colors"
+                              >
+                                <Trash2 className="w-4 h-4" />
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      ))
+                    )}
                   </div>
-                  <div className="text-sm text-slate-400 mb-1">{story.car}</div>
-                  <div className="text-sm text-green-400">{story.result}</div>
                 </div>
-              ))}
+              )}
+
+              {activeTab === 'settings' && (
+                <div className="space-y-6 animate-fade-in">
+                  <h3 className="text-xl font-bold">Auction Settings</h3>
+                  <div className="bg-gradient-to-r from-gray-800/50 to-gray-700/30 rounded-xl p-6 border border-gray-600/30">
+                    <p className="text-gray-400">Settings panel coming soon...</p>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
+        </div>
+      )}
 
-          <div className="glass rounded-2xl p-6 animate-slide-in-right">
-            <h3 className="text-xl font-bold text-white mb-4">Why Choose Our Platform?</h3>
-            <div className="space-y-4">
-              {[
-                { icon: Users, title: 'Large Audience', desc: '15,000+ active buyers' },
-                { icon: Shield, title: 'Secure Transactions', desc: 'Protected payments & transfers' },
-                { icon: Award, title: 'Expert Support', desc: 'Dedicated auction specialists' },
-                { icon: TrendingUp, title: 'Higher Prices', desc: 'Average 12% above market value' }
-              ].map((benefit, index) => (
-                <div key={index} className="flex items-center space-x-4 p-4 bg-slate-800/30 rounded-xl">
-                  <div className="p-2 bg-purple-500/20 rounded-lg">
-                    <benefit.icon className="w-5 h-5 text-purple-400" />
+      {/* Add/Edit Car Modal */}
+      {(showAddCarModal || showEditCarModal) && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center animate-fade-in">
+          <div className="bg-gradient-to-br from-gray-800/95 via-gray-900/95 to-black/95 backdrop-blur-xl rounded-2xl border border-blue-500/30 w-full max-w-md shadow-2xl modal-glow animate-slide-in-up">
+            <div className="p-6">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-xl font-bold">
+                  {showEditCarModal ? 'Edit Car' : 'Add New Car'}
+                </h3>
+                <button 
+                  onClick={() => {
+                    setShowAddCarModal(false);
+                    setShowEditCarModal(false);
+                    setEditingCar(null);
+                    setNewCar({
+                      spawnName: '',
+                      label: '',
+                      imageUrl: '',
+                      startingBid: '',
+                      currency: 'bank'
+                    });
+                  }}
+                  className="p-2 hover:bg-gray-700/50 rounded-lg transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium mb-2">Spawn Name</label>
+                  <input 
+                    type="text"
+                    value={newCar.spawnName}
+                    onChange={(e) => setNewCar({...newCar, spawnName: e.target.value})}
+                    className="w-full bg-gray-700/50 border border-gray-600/50 rounded-lg px-3 py-2 focus:border-blue-500/50 focus:outline-none"
+                    placeholder="e.g., adder"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium mb-2">Display Name</label>
+                  <input 
+                    type="text"
+                    value={newCar.label}
+                    onChange={(e) => setNewCar({...newCar, label: e.target.value})}
+                    className="w-full bg-gray-700/50 border border-gray-600/50 rounded-lg px-3 py-2 focus:border-blue-500/50 focus:outline-none"
+                    placeholder="e.g., Truffade Adder"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium mb-2">Image URL</label>
+                  <input 
+                    type="text"
+                    value={newCar.imageUrl}
+                    onChange={(e) => setNewCar({...newCar, imageUrl: e.target.value})}
+                    className="w-full bg-gray-700/50 border border-gray-600/50 rounded-lg px-3 py-2 focus:border-blue-500/50 focus:outline-none"
+                    placeholder="https://..."
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium mb-2">Starting Bid</label>
+                  <input 
+                    type="number"
+                    value={newCar.startingBid}
+                    onChange={(e) => setNewCar({...newCar, startingBid: e.target.value})}
+                    className="w-full bg-gray-700/50 border border-gray-600/50 rounded-lg px-3 py-2 focus:border-blue-500/50 focus:outline-none"
+                    placeholder="50000"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium mb-2">Currency</label>
+                  <select 
+                    value={newCar.currency}
+                    onChange={(e) => setNewCar({...newCar, currency: e.target.value as 'bank' | 'tebex'})}
+                    className="w-full bg-gray-700/50 border border-gray-600/50 rounded-lg px-3 py-2 focus:border-blue-500/50 focus:outline-none"
+                  >
+                    <option value="bank">Bank Money</option>
+                    <option value="tebex">Tebex Coins</option>
+                  </select>
+                </div>
+
+                <div className="flex gap-3 pt-4">
+                  <button 
+                    onClick={showEditCarModal ? handleUpdateCar : handleAddCar}
+                    className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 px-4 py-2 rounded-lg font-medium transition-all duration-200"
+                  >
+                    {showEditCarModal ? 'Update Car' : 'Add Car'}
+                  </button>
+                  <button 
+                    onClick={() => {
+                      setShowAddCarModal(false);
+                      setShowEditCarModal(false);
+                      setEditingCar(null);
+                      setNewCar({
+                        spawnName: '',
+                        label: '',
+                        imageUrl: '',
+                        startingBid: '',
+                        currency: 'bank'
+                      });
+                    }}
+                    className="px-4 py-2 bg-gray-600 hover:bg-gray-500 rounded-lg font-medium transition-colors"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Bidding Interface */}
+      {showBidding && currentCar && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center animate-fade-in">
+          <div className="bg-gradient-to-br from-gray-800/95 via-gray-900/95 to-black/95 backdrop-blur-xl rounded-2xl border border-orange-500/30 w-full max-w-md shadow-2xl bidding-glow animate-slide-in-up">
+            <div className="p-6">
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 bg-orange-500/20 rounded-xl">
+                    <Gavel className="w-6 h-6 text-orange-400" />
                   </div>
                   <div>
-                    <div className="font-medium text-white">{benefit.title}</div>
-                    <div className="text-sm text-slate-400">{benefit.desc}</div>
+                    <h3 className="text-xl font-bold">Place Bid</h3>
+                    <p className="text-gray-400 text-sm">{currentCar.label}</p>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-
-  const renderPreviewView = () => (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-slate-800 to-purple-900 p-6">
-      <div className="max-w-5xl mx-auto">
-        <div className="glass rounded-3xl p-8 preview-glow animate-slide-down">
-          <div className="flex items-center justify-between mb-8">
-            <div className="flex items-center space-x-4">
-              <div className="p-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl animate-float">
-                <Monitor className="w-10 h-10 text-white" />
-              </div>
-              <div>
-                <h1 className="text-4xl font-bold gradient-text">System Preview</h1>
-                <p className="text-slate-400 text-lg">Real-time system monitoring and analytics</p>
-              </div>
-            </div>
-            <div className="text-right">
-              <div className="text-3xl font-bold text-white">{currentTime.toLocaleTimeString()}</div>
-              <div className="text-slate-400">{currentTime.toLocaleDateString()}</div>
-            </div>
-          </div>
-
-          {/* System Overview */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            {[
-              { label: 'System Health', value: '98.5%', icon: Activity, color: 'green', trend: '+0.2%' },
-              { label: 'Active Sessions', value: '1,247', icon: Users, color: 'blue', trend: '+12%' },
-              { label: 'Response Time', value: '45ms', icon: Zap, color: 'yellow', trend: '-5ms' },
-              { label: 'Uptime', value: '99.9%', icon: Clock, color: 'purple', trend: '+0.1%' }
-            ].map((metric, index) => (
-              <div key={index} className="enhanced-status-card rounded-2xl p-6 animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="flex items-center justify-between mb-4">
-                  <div className={`p-3 bg-${metric.color}-500/20 rounded-xl`}>
-                    <metric.icon className={`w-6 h-6 text-${metric.color}-400`} />
-                  </div>
-                  <div className={`text-sm font-medium px-2 py-1 rounded-full ${
-                    metric.trend.startsWith('+') ? 'bg-green-500/20 text-green-400' : 'bg-blue-500/20 text-blue-400'
-                  }`}>
-                    {metric.trend}
-                  </div>
-                </div>
-                <div className="text-2xl font-bold text-white mb-1">{metric.value}</div>
-                <div className="text-slate-400 text-sm">{metric.label}</div>
-              </div>
-            ))}
-          </div>
-
-          {/* Performance Charts */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-            <div className="enhanced-status-card rounded-2xl p-6">
-              <h3 className="text-xl font-bold text-white mb-4">Server Performance</h3>
-              <div className="space-y-4">
-                {[
-                  { label: 'CPU Usage', value: systemStatus.cpu, color: 'blue' },
-                  { label: 'Memory Usage', value: systemStatus.memory, color: 'purple' },
-                  { label: 'Storage Usage', value: systemStatus.storage, color: 'orange' },
-                  { label: 'Network Usage', value: systemStatus.network, color: 'green' }
-                ].map((metric, index) => (
-                  <div key={index}>
-                    <div className="flex justify-between text-sm mb-2">
-                      <span className="text-white">{metric.label}</span>
-                      <span className="text-slate-400">{metric.value}%</span>
-                    </div>
-                    <div className="w-full bg-slate-700 rounded-full h-2">
-                      <div 
-                        className={`bg-gradient-to-r from-${metric.color}-500 to-${metric.color}-600 h-2 rounded-full animate-expand`}
-                        style={{ width: `${metric.value}%`, animationDelay: `${index * 0.2}s` }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="enhanced-status-card rounded-2xl p-6">
-              <h3 className="text-xl font-bold text-white mb-4">Traffic Analytics</h3>
-              <div className="h-48 flex items-end justify-between space-x-2">
-                {[45, 62, 78, 85, 92, 88, 95, 89, 76, 82, 90, 100].map((height, index) => (
-                  <div key={index} className="flex-1 bg-gradient-to-t from-blue-500 to-purple-600 rounded-t-lg animate-expand" style={{ height: `${height}%`, animationDelay: `${index * 0.1}s` }} />
-                ))}
-              </div>
-              <div className="flex justify-between text-xs text-slate-400 mt-2">
-                <span>12AM</span>
-                <span>6AM</span>
-                <span>12PM</span>
-                <span>6PM</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Live Activity Feed */}
-          <div className="enhanced-status-card rounded-2xl p-6">
-            <h3 className="text-xl font-bold text-white mb-4 flex items-center">
-              <Activity className="w-5 h-5 mr-2" />
-              Live Activity Feed
-            </h3>
-            <div className="space-y-3 max-h-64 overflow-y-auto custom-scrollbar">
-              {[
-                { type: 'auction', message: 'New auction started: 2024 Lamborghini Huracán', time: '2 seconds ago', user: 'system' },
-                { type: 'bid', message: 'Bid placed on Tesla Model S Plaid: $91,000', time: '15 seconds ago', user: 'alex.martinez' },
-                { type: 'user', message: 'New user registration from New York', time: '1 minute ago', user: 'sarah.kim' },
-                { type: 'payment', message: 'Payment processed: $145,000 for Porsche 911', time: '2 minutes ago', user: 'mike.rodriguez' },
-                { type: 'auction', message: 'Auction ended: BMW M3 Competition sold for $72,500', time: '5 minutes ago', user: 'system' },
-                { type: 'bid', message: 'Reserve price met on Mercedes C63 S AMG', time: '8 minutes ago', user: 'emma.liu' }
-              ].map((activity, index) => (
-                <div key={index} className="flex items-start space-x-3 p-3 bg-slate-800/30 rounded-xl animate-slide-in-right" style={{ animationDelay: `${index * 0.1}s` }}>
-                  <div className="p-2 bg-blue-500/20 rounded-lg">
-                    {getActivityIcon(activity.type)}
-                  </div>
-                  <div className="flex-1">
-                    <div className="text-white text-sm">{activity.message}</div>
-                    <div className="text-slate-400 text-xs mt-1">
-                      {activity.time} • {activity.user}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-
-  const renderStatusView = () => (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 p-6">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="glass rounded-2xl p-8 mb-8 animate-slide-down">
-          <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center space-x-4">
-              <div className="p-4 bg-gradient-to-r from-emerald-500 to-blue-600 rounded-2xl animate-float">
-                <Activity className="w-10 h-10 text-white" />
-              </div>
-              <div>
-                <h1 className="text-4xl font-bold gradient-text">System Status Dashboard</h1>
-                <p className="text-slate-400 text-lg">Real-time monitoring and system health overview</p>
-              </div>
-            </div>
-            <div className="text-right">
-              <div className="text-3xl font-bold text-white animate-pulse">{currentTime.toLocaleTimeString()}</div>
-              <div className="text-slate-400">{currentTime.toLocaleDateString()}</div>
-              <div className="text-sm text-emerald-400 mt-1">
-                <div className="flex items-center justify-end">
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse mr-2"></div>
-                  System Online
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Quick Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { label: 'Uptime', value: systemStatus.uptime, icon: Clock, color: 'emerald' },
-              { label: 'Active Users', value: systemStatus.activeUsers.toLocaleString(), icon: Users, color: 'blue' },
-              { label: 'System Temp', value: `${systemStatus.temperature}°C`, icon: Thermometer, color: 'orange' },
-              { label: 'Revenue Today', value: `$${(systemStatus.revenue / 1000).toFixed(0)}K`, icon: DollarSign, color: 'purple' }
-            ].map((stat, index) => (
-              <div key={index} className="glass rounded-xl p-4 enhanced-status-card animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="flex items-center justify-between mb-3">
-                  <div className={`p-2 bg-${stat.color}-500/20 rounded-lg`}>
-                    <stat.icon className={`w-5 h-5 text-${stat.color}-400`} />
-                  </div>
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                </div>
-                <div className="text-xl font-bold text-white mb-1">{stat.value}</div>
-                <div className="text-slate-400 text-sm">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* System Performance */}
-          <div className="lg:col-span-2 space-y-8">
-            {/* Performance Metrics */}
-            <div className="glass rounded-2xl p-6 enhanced-status-card animate-slide-up">
-              <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-                <BarChart3 className="w-6 h-6 mr-3 text-blue-400" />
-                System Performance
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {[
-                  { label: 'CPU Usage', value: systemStatus.cpu, color: 'blue', icon: Zap },
-                  { label: 'Memory Usage', value: systemStatus.memory, color: 'purple', icon: Activity },
-                  { label: 'Storage Usage', value: systemStatus.storage, color: 'orange', icon: Shield },
-                  { label: 'Network Usage', value: systemStatus.network, color: 'emerald', icon: Wifi }
-                ].map((metric, index) => (
-                  <div key={index} className="bg-slate-800/30 rounded-xl p-4 animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center space-x-2">
-                        <metric.icon className={`w-4 h-4 text-${metric.color}-400`} />
-                        <span className="text-white font-medium">{metric.label}</span>
-                      </div>
-                      <span className={`text-${metric.color}-400 font-bold`}>{metric.value}%</span>
-                    </div>
-                    <div className="w-full bg-slate-700 rounded-full h-3 overflow-hidden">
-                      <div 
-                        className={`bg-gradient-to-r from-${metric.color}-500 to-${metric.color}-400 h-3 rounded-full animate-expand transition-all duration-1000`}
-                        style={{ width: `${metric.value}%` }}
-                      />
-                    </div>
-                    <div className="mt-2 text-xs text-slate-400">
-                      {metric.value < 70 ? 'Normal' : metric.value < 85 ? 'High' : 'Critical'}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Services Status */}
-            <div className="glass rounded-2xl p-6 enhanced-status-card animate-slide-up">
-              <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-                <Shield className="w-6 h-6 mr-3 text-emerald-400" />
-                Services Status
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {systemStatus.services.map((service, index) => (
-                  <div key={index} className="bg-slate-800/30 rounded-xl p-4 animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center space-x-3">
-                        <div className={getStatusColor(service.status)}>
-                          {getStatusIcon(service.status)}
-                        </div>
-                        <span className="text-white font-medium">{service.name}</span>
-                      </div>
-                      <div className={`px-2 py-1 rounded-full text-xs font-medium ${
-                        service.status === 'online' ? 'bg-emerald-500/20 text-emerald-400' :
-                        service.status === 'maintenance' ? 'bg-yellow-500/20 text-yellow-400' :
-                        'bg-red-500/20 text-red-400'
-                      }`}>
-                        {service.status.toUpperCase()}
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-2 gap-4 text-sm">
-                      <div>
-                        <div className="text-slate-400">Uptime</div>
-                        <div className="text-white font-medium">{service.uptime}</div>
-                      </div>
-                      <div>
-                        <div className="text-slate-400">Response</div>
-                        <div className="text-white font-medium">{service.responseTime}ms</div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Recent Activity */}
-            <div className="glass rounded-2xl p-6 enhanced-status-card animate-slide-up">
-              <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-                <Activity className="w-6 h-6 mr-3 text-orange-400" />
-                Recent Activity
-              </h2>
-              <div className="space-y-3 max-h-80 overflow-y-auto custom-scrollbar">
-                {systemStatus.recentActivity.map((activity, index) => (
-                  <div key={activity.id} className="flex items-start space-x-3 p-3 bg-slate-800/30 rounded-xl animate-slide-in-right" style={{ animationDelay: `${index * 0.05}s` }}>
-                    <div className="p-2 bg-slate-700/50 rounded-lg">
-                      {getActivityIcon(activity.type)}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="text-white text-sm font-medium">{activity.description}</div>
-                      <div className="text-slate-400 text-xs mt-1 flex items-center space-x-2">
-                        <span>{activity.timestamp}</span>
-                        <span>•</span>
-                        <span className="text-blue-400">{activity.user}</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Sidebar */}
-          <div className="space-y-8">
-            {/* System Alerts */}
-            <div className="glass rounded-2xl p-6 enhanced-status-card animate-slide-up">
-              <h2 className="text-xl font-bold text-white mb-4 flex items-center">
-                <AlertCircle className="w-5 h-5 mr-2 text-yellow-400" />
-                System Alerts
-              </h2>
-              <div className="space-y-3 max-h-64 overflow-y-auto custom-scrollbar">
-                {systemStatus.alerts.map((alert, index) => (
-                  <div key={alert.id} className={`p-3 rounded-xl border animate-slide-in-left ${
-                    alert.type === 'error' ? 'bg-red-500/10 border-red-500/30' :
-                    alert.type === 'warning' ? 'bg-yellow-500/10 border-yellow-500/30' :
-                    alert.type === 'success' ? 'bg-emerald-500/10 border-emerald-500/30' :
-                    'bg-blue-500/10 border-blue-500/30'
-                  }`} style={{ animationDelay: `${index * 0.1}s` }}>
-                    <div className="flex items-start space-x-2">
-                      {getAlertIcon(alert.type)}
-                      <div className="flex-1 min-w-0">
-                        <div className="text-white text-sm">{alert.message}</div>
-                        <div className="text-slate-400 text-xs mt-1">{alert.timestamp}</div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Quick Actions */}
-            <div className="glass rounded-2xl p-6 enhanced-status-card animate-slide-up">
-              <h2 className="text-xl font-bold text-white mb-4 flex items-center">
-                <Zap className="w-5 h-5 mr-2 text-purple-400" />
-                Quick Actions
-              </h2>
-              <div className="space-y-3">
-                {[
-                  { label: 'Restart Services', icon: RotateCcw, color: 'blue' },
-                  { label: 'Clear Cache', icon: Trash, color: 'orange' },
-                  { label: 'Backup Database', icon: Shield, color: 'emerald' },
-                  { label: 'View Logs', icon: FileText, color: 'purple' }
-                ].map((action, index) => (
-                  <button key={index} className={`w-full enhanced-control-button flex items-center space-x-3 p-3 bg-${action.color}-500/10 hover:bg-${action.color}-500/20 border border-${action.color}-500/30 rounded-xl transition-all animate-slide-up`} style={{ animationDelay: `${index * 0.1}s` }}>
-                    <action.icon className={`w-4 h-4 text-${action.color}-400`} />
-                    <span className="text-white font-medium">{action.label}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* System Info */}
-            <div className="glass rounded-2xl p-6 enhanced-status-card animate-slide-up">
-              <h2 className="text-xl font-bold text-white mb-4 flex items-center">
-                <Monitor className="w-5 h-5 mr-2 text-blue-400" />
-                System Information
-              </h2>
-              <div className="space-y-3 text-sm">
-                {[
-                  { label: 'Server Version', value: 'v2.4.1' },
-                  { label: 'Database Version', value: 'PostgreSQL 14.2' },
-                  { label: 'Node.js Version', value: 'v18.17.0' },
-                  { label: 'Last Backup', value: '2 hours ago' },
-                  { label: 'Next Maintenance', value: 'Sunday 2:00 AM' }
-                ].map((info, index) => (
-                  <div key={index} className="flex justify-between items-center p-2 bg-slate-800/30 rounded-lg animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                    <span className="text-slate-400">{info.label}</span>
-                    <span className="text-white font-medium">{info.value}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-
-  const renderCarModal = () => {
-    if (!selectedCar || !showCarModal) return null;
-
-    return (
-      <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 z-50 animate-fade-in">
-        <div className="glass rounded-3xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto modal-glow animate-slide-up">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-3xl font-bold gradient-text">
-              {selectedCar.year} {selectedCar.brand} {selectedCar.name}
-            </h2>
-            <button
-              onClick={() => setShowCarModal(false)}
-              className="p-2 bg-slate-800 hover:bg-slate-700 rounded-xl transition-all"
-            >
-              <X className="w-6 h-6 text-slate-400" />
-            </button>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div>
-              <img
-                src={selectedCar.image}
-                alt={selectedCar.name}
-                className="w-full h-64 object-cover rounded-2xl mb-4"
-              />
-              <div className="grid grid-cols-2 gap-4 text-sm">
-                <div className="space-y-2">
-                  <div className="flex items-center text-slate-400">
-                    <Gauge className="w-4 h-4 mr-2" />
-                    Mileage: {selectedCar.mileage}
-                  </div>
-                  <div className="flex items-center text-slate-400">
-                    <Fuel className="w-4 h-4 mr-2" />
-                    Fuel: {selectedCar.fuel}
-                  </div>
-                  <div className="flex items-center text-slate-400">
-                    <Settings className="w-4 h-4 mr-2" />
-                    Transmission: {selectedCar.transmission}
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <div className="flex items-center text-slate-400">
-                    <MapPin className="w-4 h-4 mr-2" />
-                    Location: {selectedCar.location}
-                  </div>
-                  <div className="flex items-center text-slate-400">
-                    <User className="w-4 h-4 mr-2" />
-                    Seller: {selectedCar.seller}
-                  </div>
-                  <div className="flex items-center text-slate-400">
-                    <Star className="w-4 h-4 mr-2 fill-current text-yellow-400" />
-                    Rating: {selectedCar.rating}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div className="text-center mb-6">
-                <div className="text-4xl font-bold gradient-text mb-2">
-                  ${selectedCar.price.toLocaleString()}
-                </div>
-                <div className="text-slate-400">Current Price</div>
-              </div>
-
-              <div className="space-y-4 mb-6">
-                <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-xl">
-                  <span className="text-white">Total Bids</span>
-                  <span className="text-orange-400 font-bold">{selectedCar.bids}</span>
-                </div>
-                <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-xl">
-                  <span className="text-white">Time Left</span>
-                  <span className="text-red-400 font-bold">{selectedCar.timeLeft}</span>
-                </div>
-                <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-xl">
-                  <span className="text-white">Condition</span>
-                  <span className="text-green-400 font-bold">{selectedCar.condition}</span>
-                </div>
-              </div>
-
-              <div className="space-y-3">
-                <input
-                  type="number"
-                  placeholder="Enter your bid..."
-                  className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
-                />
-                <button className="w-full enhanced-button bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-4 px-6 rounded-xl transition-all transform hover:scale-105">
-                  Place Bid
+                <button 
+                  onClick={() => setShowBidding(false)}
+                  className="p-2 hover:bg-gray-700/50 rounded-lg transition-colors"
+                >
+                  <X className="w-5 h-5" />
                 </button>
-                <div className="grid grid-cols-2 gap-3">
-                  <button className="enhanced-button bg-slate-800 hover:bg-slate-700 text-white font-medium py-3 px-4 rounded-xl transition-all">
-                    <Heart className="w-4 h-4 inline mr-2" />
-                    Save
+              </div>
+
+              <div className="space-y-4">
+                <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-xl p-4 border border-orange-500/20">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-gray-400">Current Bid:</span>
+                    <div className="flex items-center gap-1">
+                      {getCurrencyIcon(currentCar.currency)}
+                      <span className={`font-bold ${getCurrencyColor(currentCar.currency)}`}>
+                        {currentCar.currency === 'bank' ? `$${currentBid.toLocaleString()}` : `${currentBid}`}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-400">Top Bidder:</span>
+                    <span className="font-medium text-blue-400">{topBidder}</span>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium mb-2">
+                    Your Bid ({currentCar.currency === 'bank' ? 'Bank Money' : 'Tebex Coins'})
+                  </label>
+                  <div className="relative">
+                    <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
+                      {getCurrencyIcon(currentCar.currency)}
+                    </div>
+                    <input 
+                      type="number"
+                      value={bidAmount}
+                      onChange={(e) => setBidAmount(e.target.value)}
+                      className="w-full bg-gray-700/50 border border-gray-600/50 rounded-lg pl-10 pr-3 py-3 focus:border-orange-500/50 focus:outline-none text-lg"
+                      placeholder={`Minimum: ${currentBid + 1}`}
+                      min={currentBid + 1}
+                    />
+                  </div>
+                </div>
+
+                <div className="bg-blue-500/10 rounded-xl p-3 border border-blue-500/20">
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-400">Your Balance:</span>
+                    <div className="flex items-center gap-1">
+                      {getCurrencyIcon(currentCar.currency)}
+                      <span className={`font-medium ${getCurrencyColor(currentCar.currency)}`}>
+                        {currentCar.currency === 'bank' 
+                          ? `$${player.bankMoney.toLocaleString()}` 
+                          : `${player.tebexCoins}`
+                        }
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex gap-3 pt-4">
+                  <button 
+                    onClick={handlePlaceBid}
+                    disabled={!bidAmount || parseInt(bidAmount) <= currentBid}
+                    className="flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 disabled:from-gray-600 disabled:to-gray-700 disabled:cursor-not-allowed px-4 py-3 rounded-lg font-medium transition-all duration-200 transform hover:scale-105"
+                  >
+                    Place Bid
                   </button>
-                  <button className="enhanced-button bg-slate-800 hover:bg-slate-700 text-white font-medium py-3 px-4 rounded-xl transition-all">
-                    <Share className="w-4 h-4 inline mr-2" />
-                    Share
+                  <button 
+                    onClick={() => setShowBidding(false)}
+                    className="px-4 py-3 bg-gray-600 hover:bg-gray-500 rounded-lg font-medium transition-colors"
+                  >
+                    Cancel
                   </button>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      )}
 
-          <div className="mt-8">
-            <h3 className="text-xl font-bold text-white mb-4">Description</h3>
-            <p className="text-slate-300 mb-6">{selectedCar.description}</p>
+      {/* Tebex Shop */}
+      {showTebexShop && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center animate-fade-in">
+          <div className="bg-gradient-to-br from-gray-800/95 via-gray-900/95 to-black/95 backdrop-blur-xl rounded-3xl border border-purple-500/30 w-full max-w-5xl h-[80vh] shadow-2xl shop-glow animate-slide-in-up">
+            {/* Enhanced background pattern */}
+            <div className="absolute inset-0 opacity-5 pointer-events-none overflow-hidden rounded-3xl">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/30 rounded-full blur-3xl animate-float"></div>
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-orange-500/30 rounded-full blur-2xl animate-float-delayed"></div>
+              <ShoppingCart className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 text-purple-400/10" />
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h4 className="text-lg font-bold text-white mb-3">Features</h4>
-                <div className="space-y-2">
-                  {selectedCar.features.map((feature, index) => (
-                    <div key={index} className="flex items-center text-slate-300">
-                      <CheckCircle className="w-4 h-4 mr-2 text-green-400" />
-                      {feature}
+            {/* Header */}
+            <div className="flex items-center justify-between p-6 border-b border-gray-700/50 relative z-10">
+              <div className="flex items-center gap-3">
+                <div className="p-2 bg-purple-500/20 rounded-xl">
+                  <ShoppingCart className="w-6 h-6 text-purple-400" />
+                </div>
+                <div>
+                  <h2 className="text-2xl font-bold gradient-text">Tebex Coin Shop</h2>
+                  <p className="text-gray-400 text-sm">Purchase coins to bid on exclusive items</p>
+                </div>
+              </div>
+              <button 
+                onClick={() => setShowTebexShop(false)}
+                className="p-2 hover:bg-gray-700/50 rounded-xl transition-colors"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            {/* Content */}
+            <div className="p-6 h-full overflow-hidden relative z-10">
+              {/* Current Balance */}
+              <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-xl p-4 border border-purple-500/20 mb-6">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <Coins className="w-6 h-6 text-purple-400" />
+                    <span className="font-medium">Current Balance:</span>
+                  </div>
+                  <span className="text-2xl font-bold text-purple-400">{player.tebexCoins} Coins</span>
+                </div>
+              </div>
+
+              {/* Packages Grid */}
+              <div className="relative">
+                {/* Navigation Buttons */}
+                {tebexPackages.length > 3 && (
+                  <>
+                    <button 
+                      onClick={() => scrollPackages('left')}
+                      disabled={packageScrollIndex === 0}
+                      className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 z-10 bg-purple-600/80 hover:bg-purple-500 disabled:bg-gray-600 disabled:cursor-not-allowed p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+                    >
+                      <ChevronLeft className="w-5 h-5" />
+                    </button>
+                    <button 
+                      onClick={() => scrollPackages('right')}
+                      disabled={packageScrollIndex >= tebexPackages.length - 3}
+                      className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 z-10 bg-purple-600/80 hover:bg-purple-500 disabled:bg-gray-600 disabled:cursor-not-allowed p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+                    >
+                      <ChevronRight className="w-5 h-5" />
+                    </button>
+                  </>
+                )}
+
+                {/* Packages */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-8">
+                  {visiblePackages.map((pkg) => (
+                    <div key={pkg.id} className="bg-gradient-to-br from-purple-500/10 via-blue-500/5 to-transparent rounded-2xl border border-purple-500/20 p-6 h-80 flex flex-col enhanced-package-card">
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between mb-4">
+                          <div className="p-3 bg-purple-500/20 rounded-xl">
+                            <Gift className="w-6 h-6 text-purple-400" />
+                          </div>
+                          <div className="text-right">
+                            <div className="text-2xl font-bold text-purple-400">{pkg.coins}</div>
+                            <div className="text-sm text-gray-400">Coins</div>
+                          </div>
+                        </div>
+                        
+                        <h3 className="text-xl font-bold mb-2">{pkg.name}</h3>
+                        <p className="text-gray-400 text-sm mb-4">{pkg.description}</p>
+                        
+                        <div className="text-3xl font-bold text-green-400 mb-4">{pkg.price}</div>
+                      </div>
+                      
+                      <button 
+                        onClick={() => window.open(pkg.url, '_blank')}
+                        className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 px-4 py-3 rounded-xl font-medium transition-all duration-200 transform hover:scale-105 shadow-lg mt-auto"
+                      >
+                        <div className="flex items-center justify-center gap-2">
+                          <ShoppingCart className="w-5 h-5" />
+                          Purchase
+                        </div>
+                      </button>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div>
-                <h4 className="text-lg font-bold text-white mb-3">Vehicle History</h4>
-                <div className="space-y-2">
-                  {selectedCar.history.map((item, index) => (
-                    <div key={index} className="flex items-center text-slate-300">
-                      <CheckCircle className="w-4 h-4 mr-2 text-blue-400" />
-                      {item}
-                    </div>
-                  ))}
+              {/* Redeem Code Section */}
+              <div className="mt-8 bg-gradient-to-r from-orange-500/10 to-yellow-500/10 rounded-xl p-6 border border-orange-500/20">
+                <div className="flex items-center gap-3 mb-4">
+                  <Gift className="w-6 h-6 text-orange-400" />
+                  <h3 className="text-lg font-bold">Redeem Code</h3>
                 </div>
+                
+                {!showRedeemInput ? (
+                  <button 
+                    onClick={() => setShowRedeemInput(true)}
+                    className="bg-gradient-to-r from-orange-600 to-yellow-600 hover:from-orange-500 hover:to-yellow-500 px-4 py-2 rounded-lg font-medium transition-all duration-200"
+                  >
+                    Have a code?
+                  </button>
+                ) : (
+                  <div className="flex gap-3">
+                    <input 
+                      type="text"
+                      value={redeemCode}
+                      onChange={(e) => setRedeemCode(e.target.value)}
+                      className="flex-1 bg-gray-700/50 border border-gray-600/50 rounded-lg px-3 py-2 focus:border-orange-500/50 focus:outline-none"
+                      placeholder="Enter your code"
+                    />
+                    <button 
+                      onClick={() => {
+                        // Handle redeem logic here
+                        setRedeemCode('');
+                        setShowRedeemInput(false);
+                      }}
+                      className="bg-gradient-to-r from-orange-600 to-yellow-600 hover:from-orange-500 hover:to-yellow-500 px-4 py-2 rounded-lg font-medium transition-all duration-200"
+                    >
+                      Redeem
+                    </button>
+                    <button 
+                      onClick={() => {
+                        setShowRedeemInput(false);
+                        setRedeemCode('');
+                      }}
+                      className="px-4 py-2 bg-gray-600 hover:bg-gray-500 rounded-lg font-medium transition-colors"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           </div>
         </div>
-      </div>
-    );
-  };
-
-  return (
-    <div className="min-h-screen bg-slate-900">
-      {/* Navigation */}
-      <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-40">
-        <div className="glass rounded-2xl p-2 flex space-x-2 animate-slide-down">
-          {[
-            { id: 'auction', label: 'Auction', icon: Car },
-            { id: 'tablet', label: 'Control', icon: Smartphone },
-            { id: 'bidding', label: 'Bidding', icon: Gavel },
-            { id: 'shop', label: 'Packages', icon: ShoppingBag },
-            { id: 'preview', label: 'Preview', icon: Monitor },
-            { id: 'status', label: 'Status', icon: Activity }
-          ].map((view) => (
-            <button
-              key={view.id}
-              onClick={() => setActiveView(view.id as any)}
-              className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all enhanced-tab ${
-                activeView === view.id
-                  ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg'
-                  : 'text-slate-400 hover:text-white hover:bg-slate-700/50'
-              }`}
-            >
-              <view.icon className="w-5 h-5" />
-              <span className="font-medium hidden sm:inline">{view.label}</span>
-            </button>
-          ))}
-        </div>
-      </nav>
-
-      {/* Main Content */}
-      <main className="pt-20">
-        {activeView === 'auction' && renderAuctionView()}
-        {activeView === 'tablet' && renderTabletView()}
-        {activeView === 'bidding' && renderBiddingView()}
-        {activeView === 'shop' && renderShopView()}
-        {activeView === 'preview' && renderPreviewView()}
-        {activeView === 'status' && renderStatusView()}
-      </main>
-
-      {/* Car Modal */}
-      {renderCarModal()}
+      )}
     </div>
   );
-};
+}
 
 export default App;
