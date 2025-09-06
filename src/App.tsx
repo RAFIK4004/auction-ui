@@ -473,4 +473,11 @@ function App() {
           <div className="mb-6 pb-4 border-b border-gray-700/50 relative z-10">
             <div className="flex items-center justify-between text-sm animate-fade-in mb-3">
               <div className="flex items-center gap-2 bg-green-500/10 px-3 py-2 rounded-lg">
-                <DollarSign className="w-4
+                <DollarSign className="w-4 h-4 text-green-400" />
+                <span className="font-medium text-green-400">${player.bankMoney.toLocaleString()}</span>
+              </div>
+              <div className="flex items-center gap-2 bg-purple-500/10 px-3 py-2 rounded-lg">
+                <Coins className="w-4 h-4 text-purple-400" />
+                <span className="font-medium text-purple-400">{player.tebexCoins}</span>
+              </div>
+            </div>
